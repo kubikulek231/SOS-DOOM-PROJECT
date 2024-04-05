@@ -1,0 +1,219 @@
+#!/bin/bash
+# ---------------------------------------------------------------------
+# Bash script for setting up the DOOM compiled game
+# Written as part of an assignent during the BPC-SOS course at FEEC BUT
+# Authors: Jakub Lepik, Martin Moncek, Matej Baranyk
+#
+# This script is released under the GNU General Public License v3.0.
+# For more details, see: https://www.gnu.org/licenses/gpl-3.0.html
+# ---------------------------------------------------------------------
+
+# Enable extended globbing
+shopt -s extglob
+
+# Error counter
+error=0
+
+# ---------------------------------------------------------------------
+#                        Dependency installation
+# ---------------------------------------------------------------------
+
+echo -e "\e[1;33mInstalling required dependencies...\e[0m"
+
+# Check if unzip is installed, install if not
+echo -e "\e[1;37mChecking whether unzip is installed.\e[0m"
+if yum list installed unzip; then
+    echo "Yes."
+else
+    echo "Installing unzip:"
+    if yum install unzip -y; then
+        echo "Unzip installed."
+    else
+        echo -e "\e[1;31mUnzip could not be installed.\e[0m"
+        error=$(expr $error + 1)
+    fi
+fi
+
+# Check if screen is installed, install if not
+echo -e "\e[1;37mChecking whether screen is installed...\e[0m"
+if yum list installed screen; then
+    echo "Yes."
+else
+    echo "No, installing screen:"
+    if yum install screen -y; then
+        echo "Screen installed."
+    else
+        echo -e "\e[1;31mScreen could not be installed.\e[0m"
+        error=$(expr $error + 1)
+    fi
+fi
+
+# Check if xterm is installed, install if not
+echo -e "\e[1;37mChecking whether xterm is installed...\e[0m"
+if yum list installed xterm; then
+    echo "Yes."
+else
+    echo "No, installing xterm:"
+    if yum install xterm -y; then
+        echo "Xterm installed."
+    else
+        echo -e "\e[1;31mXterm could not be installed.\e[0m"
+        error=$(expr $error + 1)
+    fi
+fi
+
+# Check if group "X Window System" is installed, install if not
+echo -e "\e[1;37mGroup \"X Window System\" is installed...\e[0m"
+if yum grouplist | grep "X Window System"; then
+    echo "Yes."
+else
+    echo "No, installing group \"X Window System\":"
+    if yum groupinstall "X Window System" -y; then
+        echo "Group \"X Window System\" installed."
+    else
+        echo -e "\e[1;31mGroup \"X Window System\" could not be installed.\e[0m"
+        error=$(expr $error + 1)
+    fi
+fi
+
+# Install Xephyr
+echo -e "\e[1;37mChecking whether xephyr is installed...\e[0m"
+if yum install Xephyr -y; then
+    echo "Yes."
+else
+    echo -e "\e[1;31mXephyr could not be installed.\e[0m"
+    error=$(expr $error + 1)
+fi
+
+# ---------------------------------------------------------------------
+#                      Setting up the DOOM game
+# ---------------------------------------------------------------------
+
+echo -e "\e[1;33mSetting up the DOOM game...\e[0m"
+
+# Check if /root/DOOM exists, delete if it does
+echo -e "\e[1;37mChecking whether /root/DOOM exists...\e[0m"
+if [ -d /root/DOOM ]; then
+    echo "Yes, deleting it."
+    rm -rf /root/DOOM
+else
+    echo "No."
+fi
+
+echo -e "\e[1;37mChecking whether /root/temp exists...\e[0m"
+if [ -d /root/temp ]; then
+    echo "Yes, deleting it."
+    rm -rf /root/temp
+else
+    echo "No."
+fi
+
+echo -e "\e[1;37mCreating temp directory...\e[0m"
+if mkdir -p "/root/temp"; then
+    echo "Temp dir created..."
+else
+    echo -e "\e[1;31mTemp dir could not be created.\e[0m"
+    error=$(expr $error + 1)
+fi
+
+echo -e "\e[1;37mDownloading the SOS-DOOM-PROJECT repository...\e[0m"
+if curl -o "/root/temp/master.zip" "https://github.com/kubikulek231/SOS-DOOM-PROJECT/archive/refs/heads/master.zip" -O -J -L; then
+    echo "Download successful."
+else
+    echo -e "\e[1;31mSOS-DOOM-PROJECT zip could not be downloaded.\e[0m"
+    error=$(expr $error + 1)
+fi
+
+# Unzip the SOS-DOOM-PROJECT repository
+echo -e "\e[1;37mUnzipping the SOS-DOOM-PROJECT repository...\e[0m"
+if unzip -q "/root/temp/master.zip" -d "/root/temp/"; then
+    echo "Unzipped successfully."
+else
+    echo -e "\e[1;31mDOOM could not be unzipped.\e[0m"
+    error=$(expr $error + 1)
+fi
+
+# Unzip the contents of /root/temp/SOS-DOOM-PROJECT-master/DOOM-COMPILED.zip to /root/DOOM
+echo -e "\e[1;37mUnzipping the DOOM-COMPILED.zip...\e[0m"
+if unzip -q "/root/temp/SOS-DOOM-PROJECT-master/DOOM-COMPILED.zip" -d "/root/DOOM/"; then
+    echo "Unzipped successfully."
+else
+    echo -e "\e[1;31mDOOM-COMPILED.zip could not be unzipped.\e[0m"
+    error=$(expr $error + 1)
+fi
+
+# Move contents of /root/DOOM/DOOM-COMPILED to /root/DOOM
+echo -e "\e[1;37mMoving contents of DOOM-COMPILED.zip to /root/DOOM...\e[0m"
+if mv "/root/DOOM/DOOM-COMPILED/"* "/root/DOOM/"; then
+    echo "Contents moved successfully."
+else
+    echo -e "\e[1;31mDOOM-COMPILED.zip could not be moved.\e[0m"
+    error=$(expr $error + 1)
+fi
+
+# Chmod +x /root/DOOM/linuxxdoom
+echo -e "\e[1;37mChmod +x /root/DOOM/linuxxdoom...\e[0m"
+if chmod +x /root/DOOM/linuxxdoom; then
+    echo "Chmod successful."
+else
+    echo -e "\e[1;31mlinuxxdoom executable could not be chmodded.\e[0m"
+    error=$(expr $error + 1)
+fi
+
+# ---------------------------------------------------------------------
+#                             Cleaning up
+# ---------------------------------------------------------------------
+
+echo -e "\e[1;33mCleaning up...\e[0m"
+
+# Delete /root/temp
+echo -e "\e[1;37mDeleting /root/temp...\e[0m"
+if rm -rf /root/temp; then  
+    echo "Deleted successfully."
+else
+    echo -e "\e[1;31m/root/temp could not be deleted.\e[0m"
+    error=$(expr $error + 1)
+fi
+
+# Install X
+#echo "Installing X:"
+#if yum groupinstall "X Window System" -y; then
+#    echo "X installed."
+#else
+#    echo "X could not be installed."
+#    error=$(expr $error + 1)
+#fi
+
+# Install X server
+#echo "Installing X server:"
+#if yum install xorg-x11-server-Xorg -y; then
+#    echo "X server installed."
+#else
+#    echo "X server could not be installed."
+#    error=$(expr $error + 1)
+#fi
+
+# Install "Development Tools" containing gcc and g++
+#echo "Installing Development Tools:"
+#if yum groupinstall "Development Tools" -y; then
+#    echo "Development Tools installed."
+#else
+#    echo "Development Tools could not be installed."
+#    error=$(expr $error + 1)
+#fi
+
+# --------------------------------------------------------------------
+#                             Finished
+# --------------------------------------------------------------------
+
+echo -e "\e[1;33mFinished.\e[0m"
+
+# If any errors occured during the script execution
+if [ $error -gt 0 ]; then
+    echo -e "\e[31m$error errors occured during the script execution.\e[0m"
+else
+    echo -e "\e[32mFinished with no errors. :)\e[0m"
+fi
+
+# End of the script
+exit $error

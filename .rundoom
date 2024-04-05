@@ -1,0 +1,25 @@
+#!/bin/bash
+# ---------------------------------------------------------------------
+# Bash script for running DOOM in Xephyr
+# Written as part of an assignent during the BPC-SOS course at FEEC BUT
+# Authors: Jakub Lepik, Martin Moncek, Matej Baranyk
+#
+# This script is released under the GNU General Public License v3.0.
+# For more details, see: https://www.gnu.org/licenses/gpl-3.0.html
+# ---------------------------------------------------------------------
+
+echo "Executing .rundoom"
+
+# Wait for X to start
+sleep 1
+
+# Run Xephyr in an xterm window
+Xephyr -ac -screen 320x200x8 -origin 200x200 -br -noreset :1 &
+
+# Wait for Xephyr to start
+sleep 1
+
+# Run DOOM in another xterm window
+cd /root/DOOM && DISPLAY=:1 ./linuxxdoom &
+
+echo "Executing .rundoom done."
