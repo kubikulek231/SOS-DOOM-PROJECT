@@ -1,4 +1,4 @@
-# SOS-DOOM
+# SOS-DOOM-PROJECT
 
 This repository contains setup scripts and a compiled source of the [original DOOM game](https://github.com/id-Software/DOOM), which was slightly modified.
 
