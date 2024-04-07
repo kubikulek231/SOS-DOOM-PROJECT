@@ -164,18 +164,18 @@ else
     error=$(expr $error + 1)
 fi
 
-# Move run-doom.sh to /root/DOOM/
-echo -e "\e[1;37mMoving run-doom.sh to /root/DOOM/...\e[0m"
-if mv /root/temp/SOS-DOOM-PROJECT-master/run-doom.sh /root/DOOM/; then
+# Move run-doom.sh to /root/
+echo -e "\e[1;37mMoving run-doom.sh to /root/...\e[0m"
+if mv /root/temp/SOS-DOOM-PROJECT-master/run-doom.sh /root/; then
     echo "Moved successfully."
 else
     echo -e "\e[1;31mrun-doom.sh could not be moved.\e[0m"
     error=$(expr $error + 1)
 fi
 
-# Chmod +x /root/DOOM/run-doom.sh
-echo -e "\e[1;37mChmod +x /root/DOOM/run-doom.sh...\e[0m"
-if chmod +x /root/DOOM/run-doom.sh; then
+# Chmod +x /root/run-doom.sh
+echo -e "\e[1;37mChmod +x /root/run-doom.sh...\e[0m"
+if chmod +x /root/run-doom.sh; then
     echo "Chmod successful."
 else
     echo -e "\e[1;31mrun-doom.sh executable could not be chmodded.\e[0m"
