@@ -346,7 +346,7 @@ echo -e "\e[1;33mFinished.\e[0m"
 if [ $error -gt 0 ]; then
     echo -e "\e[31m$error errors occured during the script execution.\e[0m"
 else
-    echo -e "\e[32mFinished with no errors. :)\e[0m"
+    echo -e "\e[32mFinished with no errors. :) 1223\e[0m"
 fi
 
 # End of the script
