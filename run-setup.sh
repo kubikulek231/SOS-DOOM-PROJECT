@@ -12,37 +12,6 @@
 error=0
 
 # ---------------------------------------------------------------------
-#                             Setup autoupdate
-# ---------------------------------------------------------------------
-
-echo -e "\e[1;33mDownloading the most recent run-setup.sh script...\e[0m"
-
-# Get run-setup.sh off github repo
-if curl -o "/root/.run-setup.sh" "https://cdn.githubraw.com/kubikulek231/SOS-DOOM-PROJECT/master/run-setup.sh" -O -J -L; then 
-    echo -e "Newest script (.run-setup.sh) downloaded."
-    # Check if the newly downloaded is the same as the one on the server
-    if cmp -s "/root/.run-setup.sh" "/root/run-setup.sh"; then
-        echo -e "Setup script is up to date."
-    else
-
-        if mv -f "/root/.run-setup.sh" "/root/run-setup.sh"; then
-            echo -e "run-setup.sh script replaced."
-        fi
-
-        if chmod +x "/root/run-setup.sh"; then
-            echo -e "Setup script is now executable."
-        fi
-        # Exit to run again
-        echo -e "\e[1;33mSetup script is now updated. Please run it again.\e[0m"
-        #rm -f "/root/.run-setup.sh"
-        exit
-    fi
-else
-    echo -e "Setup script could not be downloaded."
-    error=$(expr $error + 1)
-fi
-
-# ---------------------------------------------------------------------
 #                        Dependency installation
 # ---------------------------------------------------------------------
 
@@ -135,7 +104,7 @@ else
 fi
 
 echo -e "\e[1;37mDownloading the SOS-DOOM-PROJECT repository...\e[0m"
-if curl -o "/root/temp/master.zip" "https://github.com/kubikulek231/SOS-DOOM-PROJECT/archive/refs/heads/master.zip?$RANDOM" -O -J -L; then
+if curl -o "/root/temp/master.zip" "https://github.com/kubikulek231/SOS-DOOM-PROJECT/archive/refs/heads/master.zip" -O -J -L; then
     echo "Download successful."
 else
     echo -e "\e[1;31mSOS-DOOM-PROJECT zip could not be downloaded.\e[0m"
@@ -150,6 +119,31 @@ else
     echo -e "\e[1;31mDOOM could not be unzipped.\e[0m"
     error=$(expr $error + 1)
 fi
+
+########## Autoupdate ##########
+
+# Compare current and new setup script
+echo -e "\e[1;36mAutoupdater: checking if the current script is up to date...\e[0m"
+if cmp -s "/root/run-setup.sh" "/root/temp/SOS-DOOM-PROJECT-master/run-setup.sh"; then
+    echo -e "\e[1;36mAutoupdater: script is up to date.\e[0m"
+else
+    echo -e "\e[1;36mAutoupdater: old setup script detected!\e[0m"
+    if mv -f "/root/temp/SOS-DOOM-PROJECT-master/run-setup.sh" "/root/run-setup.sh"; then
+        echo -e "Setup script replaced with a new one."
+    else 
+        echo -e "\e[1;31mSetup script could not be replaced with a new one.\e[0m"
+    fi
+    if chmod +x "/root/run-setup.sh"; then
+        echo -e "The new setup script is now executable."
+    else 
+        echo -e "\e[1;31mFaild to make the new setup script executable.\e[0m"
+    fi
+    # Exit to run again
+    echo -e "\e[1;33mSetup script is now updated. Please run ./run-setup again.\e[0m"
+    exit
+fi
+
+########## Autoupdate ##########
 
 # Move get-current-os-size.sh to /root/
 echo -e "\e[1;37mMoving get-current-os-size.sh to /root/...\e[0m"
@@ -346,7 +340,7 @@ echo -e "\e[1;33mFinished.\e[0m"
 if [ $error -gt 0 ]; then
     echo -e "\e[31m$error errors occured during the script execution.\e[0m"
 else
-    echo -e "\e[32mFinished with no errors. :) 1223\e[0m"
+    echo -e "\e[32mFinished with no errors. :)\e[0m"
 fi
 
 # End of the script
