@@ -117,50 +117,6 @@ yum remove -y libmnl
 yum remove -y numactl-libs
 yum remove -y device-mapper-event-libs
 
-yum remove -y libXrandr
-yum remove -y libffi
-yum remove -y libnfnetlink
-yum remove -y libXcursor
-yum remove -y libXrender
-yum remove -y virt-what
-yum remove -y libpciaccess
-yum remove -y centos-release
-yum remove -y libestr
-yum remove -y python-schedutils
-yum remove -y device-mapper-event
-yum remove -y fxload
-yum remove -y keyutils-libs
-yum remove -y cronie-anacron
-yum remove -y kpartx
-yum remove -y libaio
-yum remove -y fipscheck
-yum remove -y libacl
-yum remove -y aic94xx-firmware
-yum remove -y libXdamage
-yum remove -y libXxf86misc
-yum remove -y libXfixes
-yum remove -y xcb-util
-yum remove -y mtdev
-yum remove -y libXxf86vm
-yum remove -y libverto
-yum remove -y xcb-util-image
-yum remove -y xcb-util-renderutil
-yum remove -y libuuid
-yum remove -y libattr
-yum remove -y hostname
-yum remove -y kernel-tools-libs
-yum remove -y hardlink
-yum remove -y libXinerama
-yum remove -y nss-sysinit
-yum remove -y xcb-util-keysyms
-yum remove -y fipscheck-lib
-yum remove -y libxshmfence
-yum remove -y dracut-config-rescue
-yum remove -y systemd-sysv
-yum remove -y crontabs
-yum remove -y elfutils-default-yama-scope
-yum remove -y rootfiles
-yum remove -y firewalld-filesystem
 
 
 
