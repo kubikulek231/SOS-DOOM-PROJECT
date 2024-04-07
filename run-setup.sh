@@ -75,7 +75,7 @@ fi
 # ---------------------------------------------------------------------
 
 # Compare current and new setup script
-echo -e "\e[1;36mAutoupdater: checking if the current script is up to date...\e[0m"
+echo -e "\e[1;36mAutoupdater: checking whether the current script is up to date...\e[0m"
 au_error=0
 if cmp -s "/root/run-setup.sh" "/root/temp/SOS-DOOM-PROJECT-master/run-setup.sh"; then
     echo -e "\e[1;36mAutoupdater: script is up to date!\e[0m"
