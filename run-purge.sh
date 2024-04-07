@@ -205,7 +205,7 @@ rm -rf /usr/share/applications
 rm -rf /usr/share/icons
 rm -rf /usr/share/dict
 rm -rf /usr/share/terminfo
-rm -rf /usr/share/centos-release
+#rm -rf /usr/share/centos-release
 #rm -rf /usr/share/hwdata
 #rm -rf /usr/share/libwacom
 #rm -rf /usr/share/empty
