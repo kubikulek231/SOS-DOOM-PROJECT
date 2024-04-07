@@ -12,10 +12,10 @@
 error=0
 
 # ---------------------------------------------------------------------
-#                        Dependency installation
+#                    Script dependencies installation
 # ---------------------------------------------------------------------
 
-echo -e "\e[1;33mInstalling required dependencies...\e[0m"
+echo -e "\e[1;33mInstalling required dependencies for running this script...\e[0m"
 
 # Check if unzip is installed, install if not
 echo -e "\e[1;37mChecking whether unzip is installed.\e[0m"
@@ -30,6 +30,84 @@ else
         error=$(expr $error + 1)
     fi
 fi
+
+# ---------------------------------------------------------------------
+#                   Setting up the scripts and files
+# ---------------------------------------------------------------------
+
+echo -e "\e[1;33mSetting up the scripts and files...\e[0m"
+
+echo -e "\e[1;37mChecking whether /root/temp exists...\e[0m"
+if [ -d /root/temp ]; then
+    echo "Yes, deleting it."
+    rm -rf /root/temp
+else
+    echo "No."
+fi
+
+echo -e "\e[1;37mCreating temp directory...\e[0m"
+if mkdir -p "/root/temp"; then
+    echo "Temp dir created..."
+else
+    echo -e "\e[1;31mTemp dir could not be created.\e[0m"
+    error=$(expr $error + 1)
+fi
+
+echo -e "\e[1;37mDownloading the SOS-DOOM-PROJECT repository...\e[0m"
+if curl -o "/root/temp/master.zip" "https://github.com/kubikulek231/SOS-DOOM-PROJECT/archive/refs/heads/master.zip" -O -J -L; then
+    echo "Download successful."
+else
+    echo -e "\e[1;31mSOS-DOOM-PROJECT zip could not be downloaded.\e[0m"
+    error=$(expr $error + 1)
+fi
+
+# Unzip the SOS-DOOM-PROJECT repository
+echo -e "\e[1;37mUnzipping the SOS-DOOM-PROJECT repository...\e[0m"
+if unzip -q "/root/temp/master.zip" -d "/root/temp/"; then
+    echo "Unzipped successfully."
+else
+    echo -e "\e[1;31mDOOM could not be unzipped.\e[0m"
+    error=$(expr $error + 1)
+fi
+
+# ---------------------------------------------------------------------
+#                          Running autoupdater
+# ---------------------------------------------------------------------
+
+# Compare current and new setup script
+echo -e "\e[1;36mAutoupdater: checking if the current script is up to date...\e[0m"
+au_error=0
+if cmp -s "/root/run-setup.sh" "/root/temp/SOS-DOOM-PROJECT-master/run-setup.sh"; then
+    echo -e "\e[1;36mAutoupdater: script is up to date.\e[0m"
+else
+    if mv -f "/root/temp/SOS-DOOM-PROJECT-master/run-setup.sh" "/root/run-setup.sh"; then
+        echo -e "Setup script replaced with a new one."
+    else 
+        echo -e "\e[1;31mSetup script could not be replaced with a new one.\e[0m"
+        au_error=$(expr $au_error + 1)
+    fi
+    if chmod +x "/root/run-setup.sh"; then
+        echo -e "The new setup script is now executable."
+    else 
+        echo -e "\e[1;31mFaild to make the new setup script executable.\e[0m"
+        au_error=$(expr $au_error + 1)
+    fi
+
+    if [ $au_error -eq 0 ]; then
+        echo -e "\e[1;36mAutoupdater: old setup script replaced!\e[0m"
+    else
+        echo -e "\e[1;31mAutoupdater: errors occured during the update!\e[0m"
+    fi
+    # Exit to run again
+    echo -e "\e[1;33mSetup script is now updated. Please run ./run-setup again.\e[0m"
+    exit
+fi
+
+# ---------------------------------------------------------------------
+#                      Installing DOOM dependencies
+# ---------------------------------------------------------------------
+
+echo -e "\e[1;33mInstalling DOOM dependencies...\e[0m"
 
 # Check if xterm is installed, install if not
 echo -e "\e[1;37mChecking whether xterm is installed...\e[0m"
@@ -81,77 +159,6 @@ else
     error=$(expr $error + 1)
 fi
 
-# ---------------------------------------------------------------------
-#                   Setting up the scripts and files
-# ---------------------------------------------------------------------
-
-echo -e "\e[1;33mSetting up the scripts and files...\e[0m"
-
-echo -e "\e[1;37mChecking whether /root/temp exists...\e[0m"
-if [ -d /root/temp ]; then
-    echo "Yes, deleting it."
-    rm -rf /root/temp
-else
-    echo "No."
-fi
-
-echo -e "\e[1;37mCreating temp directory...\e[0m"
-if mkdir -p "/root/temp"; then
-    echo "Temp dir created..."
-else
-    echo -e "\e[1;31mTemp dir could not be created.\e[0m"
-    error=$(expr $error + 1)
-fi
-
-echo -e "\e[1;37mDownloading the SOS-DOOM-PROJECT repository...\e[0m"
-if curl -o "/root/temp/master.zip" "https://github.com/kubikulek231/SOS-DOOM-PROJECT/archive/refs/heads/master.zip" -O -J -L; then
-    echo "Download successful."
-else
-    echo -e "\e[1;31mSOS-DOOM-PROJECT zip could not be downloaded.\e[0m"
-    error=$(expr $error + 1)
-fi
-
-# Unzip the SOS-DOOM-PROJECT repository
-echo -e "\e[1;37mUnzipping the SOS-DOOM-PROJECT repository...\e[0m"
-if unzip -q "/root/temp/master.zip" -d "/root/temp/"; then
-    echo "Unzipped successfully."
-else
-    echo -e "\e[1;31mDOOM could not be unzipped.\e[0m"
-    error=$(expr $error + 1)
-fi
-
-########## Autoupdater ##########
-
-# Compare current and new setup script
-echo -e "\e[1;36mAutoupdater: checking if the current script is up to date...\e[0m"
-au_error=0
-if cmp -s "/root/run-setup.sh" "/root/temp/SOS-DOOM-PROJECT-master/run-setup.sh"; then
-    echo -e "\e[1;36mAutoupdater: script is up to date.\e[0m"
-else
-    if mv -f "/root/temp/SOS-DOOM-PROJECT-master/run-setup.sh" "/root/run-setup.sh"; then
-        echo -e "Setup script replaced with a new one."
-    else 
-        echo -e "\e[1;31mSetup script could not be replaced with a new one.\e[0m"
-        au_error=$(expr $au_error + 1)
-    fi
-    if chmod +x "/root/run-setup.sh"; then
-        echo -e "The new setup script is now executable."
-    else 
-        echo -e "\e[1;31mFaild to make the new setup script executable.\e[0m"
-        au_error=$(expr $au_error + 1)
-    fi
-
-    if [ $au_error -eq 0 ]; then
-        echo -e "\e[1;36mAutoupdater: old setup script replaced!\e[0m"
-    else
-        echo -e "\e[1;31mAutoupdater: errors occured during the update!\e[0m"
-    fi
-    # Exit to run again
-    echo -e "\e[1;33mSetup script is now updated. Please run ./run-setup again.\e[0m"
-    exit
-fi
-
-########## Autoupdater ##########
 
 # Move get-current-os-size.sh to /root/
 echo -e "\e[1;37mMoving get-current-os-size.sh to /root/...\e[0m"
