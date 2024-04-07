@@ -34,20 +34,6 @@ else
     fi
 fi
 
-# Check if screen is installed, install if not
-echo -e "\e[1;37mChecking whether screen is installed...\e[0m"
-if yum list installed screen; then
-    echo "Yes."
-else
-    echo "No, installing screen:"
-    if yum install screen -y; then
-        echo "Screen installed."
-    else
-        echo -e "\e[1;31mScreen could not be installed.\e[0m"
-        error=$(expr $error + 1)
-    fi
-fi
-
 # Check if xterm is installed, install if not
 echo -e "\e[1;37mChecking whether xterm is installed...\e[0m"
 if yum list installed xterm; then
@@ -160,6 +146,24 @@ else
     error=$(expr $error + 1)
 fi
 
+# Move .xinitrc to /root/.xinitrc
+echo -e "\e[1;37mMoving .xinitrc to /root/.xinitrc...\e[0m"
+if mv /root/temp/SOS-DOOM-PROJECT-master/.xinitrc /root/.xinitrc; then
+    echo "Moved successfully."
+else
+    echo -e "\e[1;31m.xinitrc could not be moved.\e[0m"
+    error=$(expr $error + 1)
+fi
+
+# Move xorg.conf to /etc/X11/
+echo -e "\e[1;37mMoving xorg.conf to /etc/X11/...\e[0m"
+if mv /root/temp/SOS-DOOM-PROJECT-master/xorg.conf /etc/X11/; then
+    echo "Moved successfully."
+else
+    echo -e "\e[1;31mxorg.conf could not be moved.\e[0m"
+    error=$(expr $error + 1)
+fi
+
 # ---------------------------------------------------------------------
 #                             Cleaning up
 # ---------------------------------------------------------------------
@@ -172,6 +176,15 @@ if rm -rf /root/temp; then
     echo "Deleted successfully."
 else
     echo -e "\e[1;31m/root/temp could not be deleted.\e[0m"
+    error=$(expr $error + 1)
+fi
+
+# Uninstall unzip
+echo -e "\e[1;37mUninstalling unzip...\e[0m"
+if yum remove unzip -y; then
+    echo "Uninstall successful."
+else
+    echo -e "\e[1;31mUninstall failed.\e[0m"
     error=$(expr $error + 1)
 fi
 
