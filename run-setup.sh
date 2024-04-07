@@ -19,10 +19,10 @@ echo -e "\e[1;33mDownloading the most recent run-setup.sh script...\e[0m"
 
 # Get run-setup.sh off github repo
 if curl -o "/root/.run-setup.sh" "https://raw.githubusercontent.com/kubikulek231/SOS-DOOM-PROJECT/master/run-setup.sh?$RANDOM" -O -J -L; then 
-    echo -e ".run-setup.sh downloaded."
+    echo -e "Newest script (.run-setup.sh) downloaded."
     # Check if the newly downloaded is the same as the one on the server
     if cmp -s "/root/.run-setup.sh" "/root/run-setup.sh"; then
-        echo -e "Run-setup.sh script is up to date."
+        echo -e "Setup script is up to date."
     else
 
         if mv -f "/root/.run-setup.sh" "/root/run-setup.sh"; then
@@ -30,15 +30,15 @@ if curl -o "/root/.run-setup.sh" "https://raw.githubusercontent.com/kubikulek231
         fi
 
         if chmod +x "/root/run-setup.sh"; then
-            echo -e "run-setup.sh script is now executable."
+            echo -e "Setup script is now executable."
         fi
         # Exit to run again
-        echo -e "\e[1;33mRun-setup.sh script is now updated. Please run it again.\e[0m"
+        echo -e "\e[1;33mSetup script is now updated. Please run it again.\e[0m"
         rm -f "/root/.run-setup.sh"
         exit
     fi
 else
-    echo -e "run-setup.sh could not be downloaded."
+    echo -e "Setup script could not be downloaded."
     error=$(expr $error + 1)
 fi
 
