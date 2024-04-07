@@ -17,16 +17,17 @@ rm -f /boot/vmlinuz-0*
 rm -f /boot/initramfs-0*
 rm -f /boot/symvers*
 rm -f /boot/*kdump.img
-rm -f /boot/grub
+rm -rf /boot/grub
 rm -f /boot/System.map-*
 rm -f /boot/efi
 
 # ---------------------------------------------------------------------
-#                        Yum package removal
+#                   Remove unnessesary yum packages
 # ---------------------------------------------------------------------
 
-echo -e "\e[1;33mYum package list:\e[0m"
-yum list installed
-
 echo -e "\e[1;33mRemoving unnessesary yum packages...\e[0m"
+yum remove -y linux-firmware
+yum remove -y iwl7260-*
+yum remove -y selinux
+yum remove -y centos-logos
 
