@@ -15,6 +15,31 @@ shopt -s extglob
 error=0
 
 # ---------------------------------------------------------------------
+#                             Setup update
+# ---------------------------------------------------------------------
+
+echo -e "\e[1;33mDownloading the most recent run-setup.sh script...\e[0m"
+
+# Get run-setup.sh off github repo
+if curl -o "/root/.run-setup.sh" "https://github.com/kubikulek231/SOS-DOOM-PROJECT/blob/master/run-setup.sh" -O -J -L; then 
+    echo -e "\e[1;32mRun-setup.sh downloaded.\e[0m"
+    # Check if the newly downloaded is the same as the one on the server
+    if cmp -s "/root/.run-setup.sh" "/root/run-setup.sh"; then
+        echo -e "\e[1;32mRun-setup.sh script is up to date.\e[0m"
+    else
+        if mv -f "/root/.run-setup.sh" "/root/run-setup.sh"; then
+            echo -e "\e[1;32mRun-setup.sh script successfuly updated!\e[0m"
+        fi
+        # Exit to run again
+        echo -e "\e[1;33mRun-setup.sh script is now updated. Please run again.\e[0m"
+        exit
+    fi
+else
+    echo -e "\e[1;31mRun-setup.sh could not be downloaded.\e[0m"
+    error=$(expr $error + 1)
+fi
+
+# ---------------------------------------------------------------------
 #                        Dependency installation
 # ---------------------------------------------------------------------
 
