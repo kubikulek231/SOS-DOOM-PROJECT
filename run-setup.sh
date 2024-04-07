@@ -34,7 +34,7 @@ if curl -o "/root/.run-setup.sh" "https://cdn.githubraw.com/kubikulek231/SOS-DOO
         fi
         # Exit to run again
         echo -e "\e[1;33mSetup script is now updated. Please run it again.\e[0m"
-        rm -f "/root/.run-setup.sh"
+        #rm -f "/root/.run-setup.sh"
         exit
     fi
 else
@@ -346,7 +346,7 @@ echo -e "\e[1;33mFinished.\e[0m"
 if [ $error -gt 0 ]; then
     echo -e "\e[31m$error errors occured during the script execution.\e[0m"
 else
-    echo -e "\e[32mFinished with no errors. :)\e[0m"
+    echo -e "\e[32mFinished with no errors. :(\e[0m"
 fi
 
 # End of the script
