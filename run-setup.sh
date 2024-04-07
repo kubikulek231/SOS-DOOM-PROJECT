@@ -26,7 +26,7 @@ if curl -o "/root/.run-setup.sh" "https://raw.githubusercontent.com/kubikulek231
     else
 
         if mv -f "/root/.run-setup.sh" "/root/run-setup.sh"; then
-            echo -e "Run-setup.sh script successffuly updated!"
+            echo -e "Run-setup.sh script replaced."
         fi
 
         if chmod +x "/root/run-setup.sh"; then
