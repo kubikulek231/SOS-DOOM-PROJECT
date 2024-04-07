@@ -8,9 +8,6 @@
 # For more details, see: https://www.gnu.org/licenses/gpl-3.0.html
 # ---------------------------------------------------------------------
 
-# Enable extended globbing
-shopt -s extglob
-
 # Error counter
 error=0
 
