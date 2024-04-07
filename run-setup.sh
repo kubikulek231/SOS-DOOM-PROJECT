@@ -141,6 +141,15 @@ else
     error=$(expr $error + 1)
 fi
 
+# Move get-yum-packages.sh to /root/
+echo -e "\e[1;37mMoving get-yum-packages.sh to /root/...\e[0m"
+if mv /root/temp/SOS-DOOM-PROJECT-master/get-yum-packages.sh /root/; then
+    echo "Moved successfully."
+else
+    echo -e "\e[1;31mget-yum-packages.sh could not be moved.\e[0m"
+    error=$(expr $error + 1)
+fi
+
 # Chmod +x /root/get-current-os-size.sh
 echo -e "\e[1;37mChmod +x /root/get-current-os-size.sh...\e[0m"
 if chmod +x /root/get-current-os-size.sh; then
@@ -156,6 +165,15 @@ if chmod +x /root/run-purge.sh; then
     echo "Chmod successful."
 else
     echo -e "\e[1;31mrun-purge.sh executable could not be chmodded.\e[0m"
+    error=$(expr $error + 1)
+fi
+
+# Chmod +x /root/get-yum-packages.sh
+echo -e "\e[1;37mChmod +x /root/get-yum-packages.sh...\e[0m"
+if chmod +x /root/get-yum-packages.sh; then
+    echo "Chmod successful."
+else
+    echo -e "\e[1;31mget-yum-packages.sh executable could not be chmodded.\e[0m"
     error=$(expr $error + 1)
 fi
 

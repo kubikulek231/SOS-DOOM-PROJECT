@@ -27,7 +27,32 @@ rm -f /boot/efi
 
 echo -e "\e[1;33mRemoving unnessesary yum packages...\e[0m"
 yum remove -y linux-firmware
-yum remove -y iwl7260-*
-yum remove -y selinux
+yum remove -y iwl*
+yum remove -y selinux*
 yum remove -y centos-logos
+yum remove -y alsa*
+yum remove -y postfix
+yum remove -y grub2-tools
+yum remove -y grub2-common
+yum remove -y policycore*
+yum remove -y microcode_ctl
+yum remove -y mariadb-libs
+yum remove -y wpa_supplicant
+yum remove -y btrfs-progs
+yum remove -y xfsprogs
+yum remove -y mozjs17
+yum remove -y sudo
+yum remove -y lvm2
+yum remove -y bind-export-libs
+# yum remove -y tar protected
+# yum remove -y pam protected
+yum remove -y kbd-misc
+yum remove -y parted
+yum remove -y grub2-pc-modules
+yum remove -y authconfig
+yum remove -y man-db
+yum remove -y rsyslog
+yum remove -y python-firewall
+yum remove -y firewalld
 
+# yum remove -y iproute delete when network is not needed
