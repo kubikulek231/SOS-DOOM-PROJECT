@@ -124,19 +124,27 @@ fi
 
 # Compare current and new setup script
 echo -e "\e[1;36mAutoupdater: checking if the current script is up to date...\e[0m"
+au_error=0
 if cmp -s "/root/run-setup.sh" "/root/temp/SOS-DOOM-PROJECT-master/run-setup.sh"; then
     echo -e "\e[1;36mAutoupdater: script is up to date.\e[0m"
 else
-    echo -e "\e[1;36mAutoupdater: old setup script detected!\e[0m"
     if mv -f "/root/temp/SOS-DOOM-PROJECT-master/run-setup.sh" "/root/run-setup.sh"; then
         echo -e "Setup script replaced with a new one."
     else 
         echo -e "\e[1;31mSetup script could not be replaced with a new one.\e[0m"
+        au_error=$(expr $au_error + 1)
     fi
     if chmod +x "/root/run-setup.sh"; then
         echo -e "The new setup script is now executable."
     else 
         echo -e "\e[1;31mFaild to make the new setup script executable.\e[0m"
+        au_error=$(expr $au_error + 1)
+    fi
+
+    if [ $au_error -eq 0 ]; then
+        echo -e "\e[1;36mAutoupdater: old setup script replaced!\e[0m"
+    else
+        echo -e "\e[1;31mAutoupdater: errors occured during the update!\e[0m"
     fi
     # Exit to run again
     echo -e "\e[1;33mSetup script is now updated. Please run ./run-setup again.\e[0m"
