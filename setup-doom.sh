@@ -48,20 +48,6 @@ else
     fi
 fi
 
-# Check if group "X Window System" is installed, install if not
-#echo -e "\e[1;37mGroup \"X Window System\" is installed...\e[0m"
-#if yum grouplist | grep "X Window System"; then
-#    echo "Yes."
-#else
-#    echo "No, installing group \"X Window System\":"
-#    if yum groupinstall "X Window System" -y; then
-#        echo "Group \"X Window System\" installed."
-#    else
-#        echo -e "\e[1;31mGroup \"X Window System\" could not be installed.\e[0m"
-#        error=$(expr $error + 1)
-#    fi
-#fi
-
 # Install Xorg
 echo -e "\e[1;37mChecking whether Xorg is installed...\e[0m"
 if yum install Xorg -y; then
@@ -73,6 +59,7 @@ fi
 
 # Install xorg-x11-xinit
 echo -e "\e[1;37mChecking whether xorg-x11-xinit is installed...\e[0m"
+if yum install xorg-x11-xinit -y; then
     echo "Yes."
 else
     echo -e "\e[1;31mxorg-x11-xinit could not be installed.\e[0m"
@@ -81,6 +68,7 @@ fi
 
 # Install xorg-x11-libinput
 echo -e "\e[1;37mChecking whether xorg-x11-libinput is installed...\e[0m"
+if yum install xorg-x11-libinput -y; then
     echo "Yes."
 else
     echo -e "\e[1;31mxorg-x11-libinput could not be installed.\e[0m"
@@ -266,33 +254,6 @@ else
     echo -e "\e[1;31mUninstall failed.\e[0m"
     error=$(expr $error + 1)
 fi
-
-# Install X
-#echo "Installing X:"
-#if yum groupinstall "X Window System" -y; then
-#    echo "X installed."
-#else
-#    echo "X could not be installed."
-#    error=$(expr $error + 1)
-#fi
-
-# Install X server
-#echo "Installing X server:"
-#if yum install xorg-x11-server-Xorg -y; then
-#    echo "X server installed."
-#else
-#    echo "X server could not be installed."
-#    error=$(expr $error + 1)
-#fi
-
-# Install "Development Tools" containing gcc and g++
-#echo "Installing Development Tools:"
-#if yum groupinstall "Development Tools" -y; then
-#    echo "Development Tools installed."
-#else
-#    echo "Development Tools could not be installed."
-#    error=$(expr $error + 1)
-#fi
 
 # --------------------------------------------------------------------
 #                             Finished
