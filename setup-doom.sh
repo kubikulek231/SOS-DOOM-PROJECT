@@ -66,12 +66,12 @@ else
     error=$(expr $error + 1)
 fi
 
-# Install xorg-x11-libinput
-echo -e "\e[1;37mChecking whether xorg-x11-libinput is installed...\e[0m"
-if yum install xorg-x11-libinput -y; then
+# Install xorg-x11-drv-libinput
+echo -e "\e[1;37mChecking whether xorg-x11-drv-libinput is installed...\e[0m"
+if yum install xorg-x11-drv-libinput -y; then
     echo "Yes."
 else
-    echo -e "\e[1;31mxorg-x11-libinput could not be installed.\e[0m"
+    echo -e "\e[1;31mxorg-x11-drv-libinput could not be installed.\e[0m"
     error=$(expr $error + 1)
 fi
 
