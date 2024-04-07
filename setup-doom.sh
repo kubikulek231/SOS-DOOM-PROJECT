@@ -173,6 +173,15 @@ else
     error=$(expr $error + 1)
 fi
 
+# Chmod +x /root/DOOM/run-doom.sh
+echo -e "\e[1;37mChmod +x /root/DOOM/run-doom.sh...\e[0m"
+if chmod +x /root/DOOM/run-doom.sh; then
+    echo "Chmod successful."
+else
+    echo -e "\e[1;31mrun-doom.sh executable could not be chmodded.\e[0m"
+    error=$(expr $error + 1)
+fi
+
 # ---------------------------------------------------------------------
 #                             Cleaning up
 # ---------------------------------------------------------------------
