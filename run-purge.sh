@@ -22,7 +22,7 @@ rm -f /boot/System.map-*
 rm -f /boot/efi
 
 # ---------------------------------------------------------------------
-#                   Remove unnessesary yum packages
+#               Remove unnessesary unprotected yum packages
 # ---------------------------------------------------------------------
 
 echo -e "\e[1;33mRemoving unnessesary yum packages...\e[0m"
@@ -44,8 +44,6 @@ yum remove -y mozjs17
 yum remove -y sudo
 yum remove -y lvm2
 yum remove -y bind-export-libs
-# yum remove -y tar protected
-# yum remove -y pam protected
 yum remove -y kbd-misc
 yum remove -y parted
 yum remove -y grub2-pc-modules
@@ -66,7 +64,7 @@ yum remove -y audit
 yum remove -y python-config*
 yum remove -y kbd-legacy
 yum remove -y chrony
-yum remove -y passwd # here network got fucked ... guess i delete it all together now?
+yum remove -y passwd
 yum remove -y NetworkMa*
 yum remove -y e2fsprogs*
 yum remove -y ebtables
@@ -116,12 +114,39 @@ yum remove -y libfastjson
 yum remove -y libmnl
 yum remove -y numactl-libs
 yum remove -y device-mapper-event-libs
+yum remove -y libnfnetlink
+yum remove -y virt-what
+yum remove -y libestr
+yum remove -y python-schedutils
+yum remove -y device-mapper-event
+yum remove -y fxload
+yum remove -y libaio
+yum remove -y fipscheck
+yum remove -y aic94xx-firmware
+yum remove -y hostname
+yum remove -y kernel-tools-libs
+yum remove -y dracut-config-rescue
+yum remove -y crontabs
+yum remove -y rootfiles
+yum remove -y firewalld-filesystem
+yum remove -y vim-minimal
+yum remove -y gettext-libs
+yum remove -y gobject-introspection
+yum remove -y ethtool
+yum remove -y libcroco
+yum remove -y libgomp
+yum remove -y grubby
+yum remove -y sysvinit
 
+# ---------------------------------------------------------------------
+#                 Remove unnessesary protected yum packages
+# ---------------------------------------------------------------------
 
+echo -e "\e[1;33mRemoving unnessesary protected yum packages...\e[0m"
 
-
-
-
-
-
-# yum remove -y iproute delete when network is not needed
+yum remove -y groff-base --setopt=protected_multilib=false --setopt=protected_packages=none
+yum remove -y libunistring --setopt=protected_multilib=false --setopt=protected_packages=none
+yum remove -y libnl3 --setopt=protected_multilib=false --setopt=protected_packages=none
+yum remove -y audit --setopt=protected_multilib=false --setopt=protected_packages=none
+yum remove -y libselinux-python --setopt=protected_multilib=false --setopt=protected_packages=none´
+yum remove -y gdbm --setopt=protected_multilib=false --setopt=protected_packages=none
