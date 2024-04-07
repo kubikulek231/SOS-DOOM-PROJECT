@@ -9,7 +9,24 @@
 # ---------------------------------------------------------------------
 
 # ---------------------------------------------------------------------
+#                      Remove unnessesary /boot files
+# ---------------------------------------------------------------------
+
+echo -e "\e[1;33mRemoving unnessesary /boot files...\e[0m"
+rm -f /boot/vmlinuz-0*
+rm -f /boot/initramfs-0*
+rm -f /boot/symvers*
+rm -f /boot/*kdump.img
+rm -f /boot/grub
+rm -f /boot/System.map-*
+rm -f /boot/efi
+
+# ---------------------------------------------------------------------
 #                        Yum package removal
 # ---------------------------------------------------------------------
 
+echo -e "\e[1;33mYum package list:\e[0m"
+yum list installed
+
 echo -e "\e[1;33mRemoving unnessesary yum packages...\e[0m"
+
