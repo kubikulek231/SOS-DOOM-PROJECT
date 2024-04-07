@@ -182,6 +182,15 @@ else
     error=$(expr $error + 1)
 fi
 
+# Move .rundoom to /root/
+echo -e "\e[1;37mMoving .rundoom to /root/...\e[0m"
+if mv /root/temp/SOS-DOOM-PROJECT-master/.rundoom /root/; then
+    echo "Moved successfully."
+else
+    echo -e "\e[1;31m.rundoom could not be moved.\e[0m"
+    error=$(expr $error + 1)
+fi
+
 # Chmod +x /root/run-doom.sh
 echo -e "\e[1;37mChmod +x /root/run-doom.sh...\e[0m"
 if chmod +x /root/run-doom.sh; then
@@ -197,6 +206,15 @@ if chmod +x /root/get-current-os-size.sh; then
     echo "Chmod successful."
 else
     echo -e "\e[1;31mget-current-os-size.sh executable could not be chmodded.\e[0m"
+    error=$(expr $error + 1)
+fi
+
+# Chmod +x /root/.rundoom
+echo -e "\e[1;37mChmod +x /root/.rundoom...\e[0m"
+if chmod +x /root/.rundoom; then
+    echo "Chmod successful."
+else
+    echo -e "\e[1;31m.rundoom executable could not be chmodded.\e[0m"
     error=$(expr $error + 1)
 fi
 
