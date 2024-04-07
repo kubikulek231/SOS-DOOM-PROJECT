@@ -49,18 +49,18 @@ else
 fi
 
 # Check if group "X Window System" is installed, install if not
-echo -e "\e[1;37mGroup \"X Window System\" is installed...\e[0m"
-if yum grouplist | grep "X Window System"; then
-    echo "Yes."
-else
-    echo "No, installing group \"X Window System\":"
-    if yum groupinstall "X Window System" -y; then
-        echo "Group \"X Window System\" installed."
-    else
-        echo -e "\e[1;31mGroup \"X Window System\" could not be installed.\e[0m"
-        error=$(expr $error + 1)
-    fi
-fi
+#echo -e "\e[1;37mGroup \"X Window System\" is installed...\e[0m"
+#if yum grouplist | grep "X Window System"; then
+#    echo "Yes."
+#else
+#    echo "No, installing group \"X Window System\":"
+#    if yum groupinstall "X Window System" -y; then
+#        echo "Group \"X Window System\" installed."
+#    else
+#        echo -e "\e[1;31mGroup \"X Window System\" could not be installed.\e[0m"
+#        error=$(expr $error + 1)
+#    fi
+#fi
 
 # Install Xephyr
 echo -e "\e[1;37mChecking whether xephyr is installed...\e[0m"
