@@ -156,10 +156,23 @@ yum remove -y gdbm --setopt=protected_multilib=false --setopt=protected_packages
 # ---------------------------------------------------------------------
 echo -e "\e[1;33mRemoving redundant files...\e[0m"
 
+
+rm -rf /var/cache
+rm -rf /var/lib/yum
+
+rm -rf /usr/include
+rm -rf /usr/games
+rm -rf /usr/etc
+rm -rf /usr/locale
+rm -rf /usr/lib/kernel
+rm -rf /usr/lib/modules
+rm -rf /usr/lib/locale
+
+rm -rf /usr/tmp
 rm -rf /usr/share/doc
 rm -rf /usr/share/man
 rm -rf /usr/share/info
 rm -rf /usr/share/groff
 rm -rf /usr/share/locale
 rm -rf /usr/share/i18n
-rm -rf /var/cache
+
