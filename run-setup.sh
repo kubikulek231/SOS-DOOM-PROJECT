@@ -18,19 +18,19 @@ error=0
 echo -e "\e[1;33mDownloading the most recent run-setup.sh script...\e[0m"
 
 # Get run-setup.sh off github repo
-if curl -H 'Pragma: no-cache' -o "/root/.run-setup.sh" "https://raw.githubusercontent.com/kubikulek231/SOS-DOOM-PROJECT/master/run-setup.sh" -O -J -L; then 
-    echo -e "Run-setup.sh downloaded."
+if curl -o "/root/.run-setup.sh" "https://raw.githubusercontent.com/kubikulek231/SOS-DOOM-PROJECT/master/run-setup.sh" -O -J -L; then 
+    echo -e ".run-setup.sh downloaded."
     # Check if the newly downloaded is the same as the one on the server
     if cmp -s "/root/.run-setup.sh" "/root/run-setup.sh"; then
         echo -e "Run-setup.sh script is up to date."
     else
 
         if mv -f "/root/.run-setup.sh" "/root/run-setup.sh"; then
-            echo -e "Run-setup.sh script replaced."
+            echo -e "run-setup.sh script replaced."
         fi
 
         if chmod +x "/root/run-setup.sh"; then
-            echo -e "Run-setup.sh script is now executable."
+            echo -e "run-setup.sh script is now executable."
         fi
         # Exit to run again
         echo -e "\e[1;33mRun-setup.sh script is now updated. Please run it again.\e[0m"
@@ -38,7 +38,7 @@ if curl -H 'Pragma: no-cache' -o "/root/.run-setup.sh" "https://raw.githubuserco
         exit
     fi
 else
-    echo -e "Run-setup.sh could not be downloaded."
+    echo -e "run-setup.sh could not be downloaded."
     error=$(expr $error + 1)
 fi
 
@@ -135,7 +135,7 @@ else
 fi
 
 echo -e "\e[1;37mDownloading the SOS-DOOM-PROJECT repository...\e[0m"
-if curl -H 'Pragma: no-cache' -o "/root/temp/master.zip" "https://github.com/kubikulek231/SOS-DOOM-PROJECT/archive/refs/heads/master.zip" -O -J -L; then
+if curl -o "/root/temp/master.zip" "https://github.com/kubikulek231/SOS-DOOM-PROJECT/archive/refs/heads/master.zip" -O -J -L; then
     echo "Download successful."
 else
     echo -e "\e[1;31mSOS-DOOM-PROJECT zip could not be downloaded.\e[0m"
