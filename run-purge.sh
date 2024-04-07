@@ -158,7 +158,7 @@ echo -e "\e[1;33mRemoving redundant files...\e[0m"
 
 rm -rf /home/
 rm -rf /dev/
-rm -rf /etc/
+#rm -rf /etc/
 
 rm -rf /var/cache
 rm -rf /var/lib/yum
