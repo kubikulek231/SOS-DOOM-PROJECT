@@ -15,7 +15,7 @@ shopt -s extglob
 error=0
 
 # ---------------------------------------------------------------------
-#                             Setup update
+#                             Setup autoupdate
 # ---------------------------------------------------------------------
 
 echo -e "\e[1;33mDownloading the most recent run-setup.sh script...\e[0m"
