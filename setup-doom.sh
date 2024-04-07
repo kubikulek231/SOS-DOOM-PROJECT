@@ -62,6 +62,31 @@ fi
 #    fi
 #fi
 
+# Install Xorg
+echo -e "\e[1;37mChecking whether Xorg is installed...\e[0m"
+if yum install Xorg -y; then
+    echo "Yes."
+else
+    echo -e "\e[1;31mXorg could not be installed.\e[0m"
+    error=$(expr $error + 1)
+fi
+
+# Install xorg-x11-xinit
+echo -e "\e[1;37mChecking whether xorg-x11-xinit is installed...\e[0m"
+    echo "Yes."
+else
+    echo -e "\e[1;31mxorg-x11-xinit could not be installed.\e[0m"
+    error=$(expr $error + 1)
+fi
+
+# Install xorg-x11-libinput
+echo -e "\e[1;37mChecking whether xorg-x11-libinput is installed...\e[0m"
+    echo "Yes."
+else
+    echo -e "\e[1;31mxorg-x11-libinput could not be installed.\e[0m"
+    error=$(expr $error + 1)
+fi
+
 # Install Xephyr
 echo -e "\e[1;37mChecking whether xephyr is installed...\e[0m"
 if yum install Xephyr -y; then
