@@ -85,19 +85,10 @@ else
 fi
 
 # ---------------------------------------------------------------------
-#                      Setting up the DOOM game
+#                   Setting up the scripts and files
 # ---------------------------------------------------------------------
 
-echo -e "\e[1;33mSetting up the DOOM game...\e[0m"
-
-# Check if /root/DOOM exists, delete if it does
-echo -e "\e[1;37mChecking whether /root/DOOM exists...\e[0m"
-if [ -d /root/DOOM ]; then
-    echo "Yes, deleting it."
-    rm -rf /root/DOOM
-else
-    echo "No."
-fi
+echo -e "\e[1;33mSetting up the scripts and files...\e[0m"
 
 echo -e "\e[1;37mChecking whether /root/temp exists...\e[0m"
 if [ -d /root/temp ]; then
@@ -130,6 +121,57 @@ if unzip -q "/root/temp/master.zip" -d "/root/temp/"; then
 else
     echo -e "\e[1;31mDOOM could not be unzipped.\e[0m"
     error=$(expr $error + 1)
+fi
+
+# Move get-current-os-size.sh to /root/
+echo -e "\e[1;37mMoving get-current-os-size.sh to /root/...\e[0m"
+if mv /root/temp/SOS-DOOM-PROJECT-master/get-current-os-size.sh /root/; then    
+    echo "Moved successfully."
+else
+    echo -e "\e[1;31mget-current-os-size.sh could not be moved.\e[0m"
+    error=$(expr $error + 1)
+fi
+
+# Move run-purge.sh to /root/
+echo -e "\e[1;37mMoving run-purge.sh to /root/...\e[0m"
+if mv /root/temp/SOS-DOOM-PROJECT-master/run-purge.sh /root/; then
+    echo "Moved successfully."
+else
+    echo -e "\e[1;31mrun-purge.sh could not be moved.\e[0m"
+    error=$(expr $error + 1)
+fi
+
+# Chmod +x /root/get-current-os-size.sh
+echo -e "\e[1;37mChmod +x /root/get-current-os-size.sh...\e[0m"
+if chmod +x /root/get-current-os-size.sh; then
+    echo "Chmod successful."
+else
+    echo -e "\e[1;31mget-current-os-size.sh executable could not be chmodded.\e[0m"
+    error=$(expr $error + 1)
+fi
+
+# Chmod +x /root/run-purge.sh
+echo -e "\e[1;37mChmod +x /root/run-purge.sh...\e[0m"
+if chmod +x /root/run-purge.sh; then
+    echo "Chmod successful."
+else
+    echo -e "\e[1;31mrun-purge.sh executable could not be chmodded.\e[0m"
+    error=$(expr $error + 1)
+fi
+
+# ---------------------------------------------------------------------
+#                      Setting up the DOOM game
+# ---------------------------------------------------------------------
+
+echo -e "\e[1;33mSetting up the DOOM game...\e[0m"
+
+# Check if /root/DOOM exists, delete if it does
+echo -e "\e[1;37mChecking whether /root/DOOM exists...\e[0m"
+if [ -d /root/DOOM ]; then
+    echo "Yes, deleting it."
+    rm -rf /root/DOOM
+else
+    echo "No."
 fi
 
 # Unzip the contents of /root/temp/SOS-DOOM-PROJECT-master/DOOM-COMPILED.zip to /root/DOOM
@@ -186,30 +228,12 @@ else
     error=$(expr $error + 1)
 fi
 
-# Move get-current-os-size.sh to /root/
-echo -e "\e[1;37mMoving get-current-os-size.sh to /root/...\e[0m"
-if mv /root/temp/SOS-DOOM-PROJECT-master/get-current-os-size.sh /root/; then    
-    echo "Moved successfully."
-else
-    echo -e "\e[1;31mget-current-os-size.sh could not be moved.\e[0m"
-    error=$(expr $error + 1)
-fi
-
 # Move .rundoom to /root/
 echo -e "\e[1;37mMoving .rundoom to /root/...\e[0m"
 if mv /root/temp/SOS-DOOM-PROJECT-master/.rundoom /root/; then
     echo "Moved successfully."
 else
     echo -e "\e[1;31m.rundoom could not be moved.\e[0m"
-    error=$(expr $error + 1)
-fi
-
-# Move run-purge.sh to /root/
-echo -e "\e[1;37mMoving run-purge.sh to /root/...\e[0m"
-if mv /root/temp/SOS-DOOM-PROJECT-master/run-purge.sh /root/; then
-    echo "Moved successfully."
-else
-    echo -e "\e[1;31mrun-purge.sh could not be moved.\e[0m"
     error=$(expr $error + 1)
 fi
 
@@ -222,14 +246,6 @@ else
     error=$(expr $error + 1)
 fi
 
-# Chmod +x /root/get-current-os-size.sh
-echo -e "\e[1;37mChmod +x /root/get-current-os-size.sh...\e[0m"
-if chmod +x /root/get-current-os-size.sh; then
-    echo "Chmod successful."
-else
-    echo -e "\e[1;31mget-current-os-size.sh executable could not be chmodded.\e[0m"
-    error=$(expr $error + 1)
-fi
 
 # Chmod +x /root/.rundoom
 echo -e "\e[1;37mChmod +x /root/.rundoom...\e[0m"
@@ -240,14 +256,6 @@ else
     error=$(expr $error + 1)
 fi
 
-# Chmod +x /root/run-purge.sh
-echo -e "\e[1;37mChmod +x /root/run-purge.sh...\e[0m"
-if chmod +x /root/run-purge.sh; then
-    echo "Chmod successful."
-else
-    echo -e "\e[1;31mrun-purge.sh executable could not be chmodded.\e[0m"
-    error=$(expr $error + 1)
-fi
 
 # ---------------------------------------------------------------------
 #                             Cleaning up
