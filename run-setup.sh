@@ -34,6 +34,7 @@ if curl -o "/root/.run-setup.sh" "https://raw.githubusercontent.com/kubikulek231
         fi
         # Exit to run again
         echo -e "\e[1;33mRun-setup.sh script is now updated. Please run again.\e[0m"
+        rm -f "/root/.run-setup.sh"
         exit
     fi
 else
