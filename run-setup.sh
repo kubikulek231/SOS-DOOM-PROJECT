@@ -100,7 +100,7 @@ else
         echo -e "\e[1;31mAutoupdater: FAILED!\e[0m"
     fi
     # Exit to run again
-    echo -e "\e[1;33mSetup script is now updated. Please run ./run-setup again.\e[0m"
+    echo -e "\e[1;33mSetup script is now updated. Please run ./run-setup.sh again.\e[0m"
     exit
 fi
 

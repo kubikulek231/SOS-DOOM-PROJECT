@@ -225,9 +225,9 @@ rm -rf /usr/share/kde4
 rm -rf /usr/share/glvnd
 rm -rf /usr/share/bash-completion
 rm -rf /usr/share/pixmaps
-rm -rf /usr/share/pkgconfig
-rm -rf /usr/share/gnupg
-rm -rf /usr/share/systemtap
+#rm -rf /usr/share/pkgconfig
+#rm -rf /usr/share/gnupg
+#rm -rf /usr/share/systemtap
 
 
 
