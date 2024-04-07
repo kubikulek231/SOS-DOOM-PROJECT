@@ -18,7 +18,7 @@ error=0
 echo -e "\e[1;33mDownloading the most recent run-setup.sh script...\e[0m"
 
 # Get run-setup.sh off github repo
-if curl -o "/root/.run-setup.sh" "https://raw.githubusercontent.com/kubikulek231/SOS-DOOM-PROJECT/master/run-setup.sh" -O -J -L; then 
+if curl -o "/root/.run-setup.sh" "https://raw.githubusercontent.com/kubikulek231/SOS-DOOM-PROJECT/master/run-setup.sh?$RANDOM" -O -J -L; then 
     echo -e ".run-setup.sh downloaded."
     # Check if the newly downloaded is the same as the one on the server
     if cmp -s "/root/.run-setup.sh" "/root/run-setup.sh"; then
@@ -135,7 +135,7 @@ else
 fi
 
 echo -e "\e[1;37mDownloading the SOS-DOOM-PROJECT repository...\e[0m"
-if curl -o "/root/temp/master.zip" "https://github.com/kubikulek231/SOS-DOOM-PROJECT/archive/refs/heads/master.zip" -O -J -L; then
+if curl -o "/root/temp/master.zip" "https://github.com/kubikulek231/SOS-DOOM-PROJECT/archive/refs/heads/master.zip?$RANDOM" -O -J -L; then
     echo "Download successful."
 else
     echo -e "\e[1;31mSOS-DOOM-PROJECT zip could not be downloaded.\e[0m"
