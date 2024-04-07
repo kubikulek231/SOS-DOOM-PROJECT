@@ -18,7 +18,7 @@ error=0
 echo -e "\e[1;33mDownloading the most recent run-setup.sh script...\e[0m"
 
 # Get run-setup.sh off github repo
-if curl -o "/root/.run-setup.sh" "https://raw.githubusercontent.com/kubikulek231/SOS-DOOM-PROJECT/master/run-setup.sh?$RANDOM" -O -J -L; then 
+if curl -o "/root/.run-setup.sh" "https://cdn.githubraw.com/kubikulek231/SOS-DOOM-PROJECT/master/run-setup.sh" -O -J -L; then 
     echo -e "Newest script (.run-setup.sh) downloaded."
     # Check if the newly downloaded is the same as the one on the server
     if cmp -s "/root/.run-setup.sh" "/root/run-setup.sh"; then
