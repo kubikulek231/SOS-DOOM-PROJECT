@@ -157,8 +157,6 @@ yum remove -y gdbm --setopt=protected_multilib=false --setopt=protected_packages
 echo -e "\e[1;33mRemoving redundant files...\e[0m"
 
 rm -rf /home/
-rm -rf /dev/
-#rm -rf /etc/
 
 rm -rf /var/cache
 rm -rf /var/lib/yum
@@ -205,29 +203,29 @@ rm -rf /usr/share/applications
 rm -rf /usr/share/icons
 rm -rf /usr/share/dict
 rm -rf /usr/share/terminfo
-#rm -rf /usr/share/centos-release
-#rm -rf /usr/share/hwdata
-#rm -rf /usr/share/libwacom
-#rm -rf /usr/share/empty
-#rm -rf /usr/share/libdrm
-#rm -rf /usr/share/augeas
-#rm -rf /usr/share/lua
-#rm -rf /usr/share/misc
-#rm -rf /usr/share/idl
-#rm -rf /usr/share/tabset
-#rm -rf /usr/share/xsessions
-#rm -rf /usr/share/zsh
-#rm -rf /usr/share/pki
-#rm -rf /usr/share/omf
-#rm -rf /usr/share/aclocal
-#rm -rf /usr/share/polkit*
-#rm -rf /usr/share/kde4
-#rm -rf /usr/share/glvnd
-#rm -rf /usr/share/bash-completion
-#rm -rf /usr/share/pixmaps
-#rm -rf /usr/share/pkgconfig
-#rm -rf /usr/share/gnupg
-#rm -rf /usr/share/systemtap
+rm -rf /usr/share/centos-release
+rm -rf /usr/share/hwdata
+rm -rf /usr/share/libwacom
+rm -rf /usr/share/empty
+rm -rf /usr/share/libdrm
+rm -rf /usr/share/augeas
+rm -rf /usr/share/lua
+rm -rf /usr/share/misc
+rm -rf /usr/share/idl
+rm -rf /usr/share/tabset
+rm -rf /usr/share/xsessions
+rm -rf /usr/share/zsh
+rm -rf /usr/share/pki
+rm -rf /usr/share/omf
+rm -rf /usr/share/aclocal
+rm -rf /usr/share/polkit*
+rm -rf /usr/share/kde4
+rm -rf /usr/share/glvnd
+rm -rf /usr/share/bash-completion
+rm -rf /usr/share/pixmaps
+rm -rf /usr/share/pkgconfig
+rm -rf /usr/share/gnupg
+rm -rf /usr/share/systemtap
 
 
 
