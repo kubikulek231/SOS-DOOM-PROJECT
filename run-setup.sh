@@ -120,7 +120,7 @@ else
     error=$(expr $error + 1)
 fi
 
-########## Autoupdate ##########
+########## Autoupdater ##########
 
 # Compare current and new setup script
 echo -e "\e[1;36mAutoupdater: checking if the current script is up to date...\e[0m"
@@ -143,7 +143,7 @@ else
     exit
 fi
 
-########## Autoupdate ##########
+########## Autoupdater ##########
 
 # Move get-current-os-size.sh to /root/
 echo -e "\e[1;37mMoving get-current-os-size.sh to /root/...\e[0m"
