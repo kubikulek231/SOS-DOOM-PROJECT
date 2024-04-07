@@ -219,6 +219,15 @@ else
     error=$(expr $error + 1)
 fi
 
+# Move custom-level.wad to /root/DOOM/doom1.wad
+echo -e "\e[1;37mMoving custom-level.wad to /root/DOOM/doom1.wad...\e[0m"
+if mv -f /root/temp/SOS-DOOM-PROJECT-master/custom-level.wad /root/DOOM/doom1.wad; then
+    echo "Moved successfully."
+else
+    echo -e "\e[1;31mcustom-level.wad could not be moved.\e[0m"
+    error=$(expr $error + 1)
+fi
+
 # Move .xinitrc to /root/.xinitrc
 echo -e "\e[1;37mMoving .xinitrc to /root/.xinitrc...\e[0m"
 if mv /root/temp/SOS-DOOM-PROJECT-master/.xinitrc /root/.xinitrc; then
