@@ -21,13 +21,13 @@ error=0
 echo -e "\e[1;33mDownloading the most recent run-setup.sh script...\e[0m"
 
 # Get run-setup.sh off github repo
-if curl -o "/root/.run-setup.sh" "https://github.com/kubikulek231/SOS-DOOM-PROJECT/blob/master/run-setup.sh" -O -J -L; then 
+if curl -o "/root/.run-setup.sh" "https://raw.githubusercontent.com/kubikulek231/SOS-DOOM-PROJECT/master/run-setup.sh" -O -J -L; then 
     echo -e "Run-setup.sh downloaded."
     # Check if the newly downloaded is the same as the one on the server
     if cmp -s "/root/.run-setup.sh" "/root/run-setup.sh"; then
         echo -e "Run-setup.sh script is up to date."
     else
-    
+
         if mv -f "/root/.run-setup.sh" "/root/run-setup.sh"; then
             echo -e "Run-setup.sh script successffuly updated!"
         fi
