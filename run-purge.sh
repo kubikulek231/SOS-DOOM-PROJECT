@@ -150,3 +150,16 @@ yum remove -y libnl3 --setopt=protected_multilib=false --setopt=protected_packag
 yum remove -y audit --setopt=protected_multilib=false --setopt=protected_packages=none
 yum remove -y libselinux-python --setopt=protected_multilib=false --setopt=protected_packages=none´
 yum remove -y gdbm --setopt=protected_multilib=false --setopt=protected_packages=none
+
+# ---------------------------------------------------------------------
+#                         Remove redundant files
+# ---------------------------------------------------------------------
+echo -e "\e[1;33mRemoving redundant files...\e[0m"
+
+rm -rf /usr/share/doc
+rm -rf /usr/share/man
+rm -rf /usr/share/info
+rm -rf /usr/share/groff
+rm -rf /usr/share/locale
+rm -rf /usr/share/i18n
+rm -rf /var/cache
