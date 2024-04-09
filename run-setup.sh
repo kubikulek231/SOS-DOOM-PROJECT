@@ -380,13 +380,19 @@ else
     echo -e "\e[32mNo errors occured during the execution. :)\e[0m"
 fi
 
-# Autopurge countdown
-echo -e "\e[33mAutopurge flag was specified.\e[0m"
-echo -e "\e[33mExecuting autopurge in 3 seconds...\e[0m"
-sleep 3
+# When autopurge is set
+if [ $autopurge -gt 1 ]; then
+    # Autopurge countdown
+    echo -e "\e[33mAutopurge flag was specified.\e[0m"
+    echo -e "\e[33mExecuting autopurge in 3 seconds...\e[0m"
+    sleep 3
 
-# Run autopurge
-/root/run-purge.sh
+    # Run autopurge
+    /root/run-purge.sh
+
+    # Reboot
+    echo -e "\e[33mRebooting...\e[0m"
+    reboot
 
 # End of the script
 exit $error
