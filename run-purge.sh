@@ -241,8 +241,8 @@ rm -rf /usr/share/licences
 rm -rf /usr/share/man
 
 rm -rf /usr/lib64/rtkaio
-rm -rf /usr/lib64/audit
-rm -rf /usr/lib64/security
+#rm -rf /usr/lib64/audit
+#rm -rf /usr/lib64/security
 rm -rf /usr/lib64/fipscheck
 rm -rf /usr/lib64/pkcs11
 rm -rf /usr/lib64/openssl
