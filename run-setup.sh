@@ -8,8 +8,50 @@
 # For more details, see: https://www.gnu.org/licenses/gpl-3.0.html
 # ---------------------------------------------------------------------
 
-# Error counter
+# Variables
 error=0
+autopurge=0
+
+
+# Parse short options
+while getopts ":a:" opt; do
+  case ${opt} in
+    a )
+      # Set autopurge variable to 1
+      autopurge=1
+      ;;
+    \? )
+      echo "Invalid option: -$OPTARG" >&2
+      exit 1
+      ;;
+    : )
+      echo "Invalid option: -$OPTARG requires an argument" >&2
+      exit 1
+      ;;
+  esac
+done
+
+# Shift processed options
+shift $((OPTIND -1))
+
+# Parse long options
+while [[ $# -gt 0 ]]; do
+  case $1 in
+    --autopurge)
+      autopurge=1
+      ;;
+    *)
+      echo "Invalid option: $1" >&2
+      exit 1
+      ;;
+  esac
+  shift
+done
+
+# Echo running autopurge
+if [[ $autopurge == 1 ]]; then
+  echo -e "\e[1;33mAutopurge specified, purge will run when setup is finished!\e[0m"
+fi
 
 # ---------------------------------------------------------------------
 #                    Script dependencies installation

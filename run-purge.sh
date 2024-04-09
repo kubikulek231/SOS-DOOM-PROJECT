@@ -237,6 +237,22 @@ rm -rf /usr/share/pixmaps
 rm -rf /usr/share/pkgconfig
 rm -rf /usr/share/gnupg
 rm -rf /usr/share/systemtap
+rm -rf /usr/share/licences
+rm -rf /usr/share/man
+
+rm -rf /usr/lib64/rtkaio
+rm -rf /usr/lib64/audit
+rm -rf /usr/lib64/security
+rm -rf /usr/lib64/fipscheck
+rm -rf /usr/lib64/pkcs11
+rm -rf /usr/lib64/openssl
+rm -rf /usr/lib64/pkgconfig
+rm -rf /usr/lib64/girepository*
+rm -rf /usr/lib64/sas12
+rm -rf /usr/lib64/libuser
+rm -rf /usr/lib64/mysql
+rm -rf /usr/lib64/elfutils
+rm -rf /usr/lib64/
 
 
 
