@@ -156,20 +156,31 @@ yum remove -y gdbm --setopt=protected_multilib=false --setopt=protected_packages
 # ---------------------------------------------------------------------
 echo -e "\e[1;33mRemoving redundant files...\e[0m"
 
-rm -rf /home/
-
 rm -rf /var/cache
 rm -rf /var/lib/yum
+rm -rf /var/lib/NetworkManager
+
+rm -rf /etc/udev/hwdb.bin
 
 rm -rf /usr/include
 rm -rf /usr/games
 rm -rf /usr/etc
 rm -rf /usr/locale
+
 rm -rf /usr/lib/kernel
 rm -rf /usr/lib/modules
 rm -rf /usr/lib/locale
-
-rm -rf /usr/tmp
+rm -rf /usr/lib/udev/accelerometer
+rm -rf /usr/lib/udev/ata_id
+rm -rf /usr/lib/udev/cdrom_id
+rm -rf /usr/lib/udev/collect
+rm -rf /usr/lib/udev/libinput-device-group
+rm -rf /usr/lib/udev/libinput-model-quirisk
+rm -rf /usr/lib/udev/mtd_probe
+rm -rf /usr/lib/udev/phys-port-name-gen
+rm -rf /usr/lib/udev/scsi_id
+rm -rf /usr/lib/udev/v4l_id
+rm -rf /usr/lib/udev/hwdb.d
 
 rm -rf /usr/share/doc
 rm -rf /usr/share/man
