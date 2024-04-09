@@ -29,7 +29,7 @@ done
 
 # Echo running autopurge
 if [[ $autopurge == 1 ]]; then
-  echo -e "\e[1;33mAutopurge specified, purge will run when setup is finished!\e[0m"
+  echo -e "\e[1;33Autopurge on, purge will run when setup is finished!\e[0m"
 fi
 
 # ---------------------------------------------------------------------
@@ -393,6 +393,7 @@ if [ $autopurge -gt 1 ]; then
     # Reboot
     echo -e "\e[33mRebooting...\e[0m"
     reboot
+fi
 
 # End of the script
 exit $error
