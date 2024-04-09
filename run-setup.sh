@@ -29,7 +29,7 @@ done
 
 # Echo running autopurge
 if [[ $autopurge == 1 ]]; then
-  echo -e "\e[1;33Autopurge on, purge will run when setup is finished!\e[0m"
+  echo -e "\e[33mAutopurge flag was specified, purge script will be executed when setup is finished!\e[0m"
 fi
 
 # ---------------------------------------------------------------------
@@ -381,7 +381,7 @@ else
 fi
 
 # When autopurge is set
-if [ $autopurge -gt 1 ]; then
+if [ $autopurge == 1 ]; then
     # Autopurge countdown
     echo -e "\e[33mAutopurge flag was specified.\e[0m"
     echo -e "\e[33mExecuting autopurge in 3 seconds...\e[0m"
