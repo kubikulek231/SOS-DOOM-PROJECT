@@ -59,7 +59,7 @@ yum remove -y make
 yum remove -y python-go*
 yum remove -y iprutils
 yum remove -y ivtv*
-yum remove -y gobject-intro*´
+yum remove -y gobject-intro*
 yum remove -y audit
 yum remove -y python-config*
 yum remove -y kbd-legacy
@@ -252,7 +252,6 @@ rm -rf /usr/lib64/sas12
 rm -rf /usr/lib64/libuser
 rm -rf /usr/lib64/mysql
 rm -rf /usr/lib64/elfutils
-rm -rf /usr/lib64/
 
 
 
