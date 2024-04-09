@@ -14,7 +14,7 @@ autopurge=0
 
 
 # Parse short options
-while getopts ":a:" opt; do
+while getopts ":a" opt; do
   case ${opt} in
     a )
       # Set autopurge variable to 1
@@ -25,7 +25,7 @@ while getopts ":a:" opt; do
       exit 1
       ;;
     : )
-      echo "Invalid option: -$OPTARG requires an argument" >&2
+      echo "Invalid option: -$OPTARG does not require an argument" >&2
       exit 1
       ;;
   esac
@@ -37,7 +37,7 @@ shift $((OPTIND -1))
 # Parse long options
 while [[ $# -gt 0 ]]; do
   case $1 in
-    --autopurge)
+    --autopurge|-a)
       autopurge=1
       ;;
     *)
