@@ -13,34 +13,14 @@ error=0
 autopurge=0
 
 
-# Parse short options
-while getopts ":a" opt; do
-  case ${opt} in
-    a )
-      # Set autopurge variable to 1
-      autopurge=1
-      ;;
-    \? )
-      echo "Invalid option: -$OPTARG" >&2
-      exit 1
-      ;;
-    : )
-      echo "Invalid option: -$OPTARG does not require an argument" >&2
-      exit 1
-      ;;
-  esac
-done
+# Run purge automatically when setup is finished and -a or --autopurge is specified
 
-# Shift processed options
-shift $((OPTIND -1))
-
-# Parse long options
 while [[ $# -gt 0 ]]; do
   case $1 in
-    --autopurge|-a)
+    -a | --autopurge)
       autopurge=1
       ;;
-    *)
+    -*)
       echo "Invalid option: $1" >&2
       exit 1
       ;;
