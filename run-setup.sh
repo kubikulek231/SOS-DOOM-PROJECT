@@ -14,7 +14,6 @@ autopurge=0
 
 
 # Run purge automatically when setup is finished and -a or --autopurge is specified
-
 while [[ $# -gt 0 ]]; do
   case $1 in
     -a | --autopurge)
@@ -380,6 +379,14 @@ if [ $error -gt 0 ]; then
 else
     echo -e "\e[32mNo errors occured during the execution. :)\e[0m"
 fi
+
+# Autopurge countdown
+echo -e "\e[33mAutopurge flag was specified.\e[0m"
+echo -e "\e[33mExecuting autopurge in 3 seconds...\e[0m"
+sleep 3
+
+# Run autopurge
+/root/run-purge.sh
 
 # End of the script
 exit $error
