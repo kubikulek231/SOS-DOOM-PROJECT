@@ -282,8 +282,8 @@ rm -rf /usr/lib64/libustr*
 rm -rf /usr/lib64/libcurse*
 rm -rf /usr/lib64/libnsprt4*
 #rm -rf /usr/lib64/libblkid* # fucks up the boot completely
-rm -rf /usr/lib64/libsemanage*
-rm -rf /usr/lib64/libmount*
+#rm -rf /usr/lib64/libsemanage*
+#rm -rf /usr/lib64/libmount*
 
 rm -rf /usr/bin/trust
 rm -rf /usr/bin/certutil
