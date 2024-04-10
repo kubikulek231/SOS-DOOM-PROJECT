@@ -156,6 +156,21 @@ yum remove -y gdbm --setopt=protected_multilib=false --setopt=protected_packages
 # ---------------------------------------------------------------------
 echo -e "\e[1;33mDisabling all logging...\e[0m"
 
+# Path to the journald.conf file
+journald_conf="/etc/systemd/journald.conf"
+
+# Check if the file already exists
+if [ ! -f "$journald_conf" ]; then
+    # Create the file if it doesn't exist
+    sudo touch "$journald_conf"
+fi
+
+# Write ReadKMsg=no into the journald.conf file
+echo "ReadKMsg=no" | sudo tee -a "$journald_conf" > /dev/null
+
+# Restart systemd-journald to apply changes
+sudo systemctl restart systemd-journald
+
 systemctl stop rsyslog
 systemctl stop systemd-journald
 systemctl disable systemd-journald
