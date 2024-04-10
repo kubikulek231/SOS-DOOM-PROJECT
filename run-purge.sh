@@ -273,18 +273,17 @@ rm -rf /usr/lib64/libinfo*
 rm -rf /usr/lib64/librpmio*
 rm -rf /usr/lib64/libssh2*
 rm -rf /usr/lib64/liblua*
-rm -rf /usr/lib64/libnss*
-rm -rf /usr/lib64/libcidn*
-rm -rf /usr/lib64/libglapi*
-rm -rf /usr/lib64/libidn*
+#rm -rf /usr/lib64/libnss*
+#rm -rf /usr/lib64/libcidn*
+#rm -rf /usr/lib64/libglapi*
+#rm -rf /usr/lib64/libidn*
 # rm -rf /usr/lib64/libgpg* deleting this fucks up everything
 rm -rf /usr/lib64/libustr*
 rm -rf /usr/lib64/libcurse*
 rm -rf /usr/lib64/libnsprt4*
 rm -rf /usr/lib64/libblkid*
-rm -rf /usr/lib64/libsemanage*
+#rm -rf /usr/lib64/libsemanage*
 # rm -rf /usr/lib64/libmount*
-rm -rf /usr/lib64/libnss*
 
 rm -rf /usr/bin/trust
 rm -rf /usr/bin/certutil
