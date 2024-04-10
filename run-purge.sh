@@ -237,10 +237,11 @@ rm -rf /usr/share/pixmaps
 rm -rf /usr/share/pkgconfig
 rm -rf /usr/share/gnupg
 rm -rf /usr/share/systemtap
-rm -rf /usr/share/licences
+rm -rf /usr/share/licenses
 rm -rf /usr/share/man
 
 rm -rf /usr/lib64/rtkaio
+# login gets fucked when deleting these
 #rm -rf /usr/lib64/audit
 #rm -rf /usr/lib64/security
 rm -rf /usr/lib64/fipscheck
@@ -252,7 +253,15 @@ rm -rf /usr/lib64/sas12
 rm -rf /usr/lib64/libuser
 rm -rf /usr/lib64/mysql
 rm -rf /usr/lib64/elfutils
+rm -rf /usr/lib64/gconv
+rm -rf /usr/lib64/nss
+rm -rf /usr/lib64/krb5
+rm -rf /usr/lib64/tls
 
+rm -rf /usr/libexec/getconf
+rm -rf /usr/libexec/awk
+rm -rf /usr/libexec/selinux
+rm -rf /usr/libexec/sudo
 
 
 
