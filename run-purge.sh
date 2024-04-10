@@ -264,26 +264,26 @@ rm -rf /usr/lib64/krb5
 rm -rf /usr/lib64/tls
 rm -rf /usr/lib64/libk5crypto*
 # rm -rf /usr/lib64/ld-* deleting this fucks up everything
-#rm -rf /usr/lib64/libncurse*
-#rm -rf /usr/lib64/libcrypt*
-#rm -rf /usr/lib64/libsmime3.so
-#rm -rf /usr/lib64/libsmart*
-#rm -rf /usr/lib64/libexpa*
-#rm -rf /usr/lib64/libinfo*
-#rm -rf /usr/lib64/librpmio*
-#rm -rf /usr/lib64/libssh2*
-#rm -rf /usr/lib64/liblua*
-#rm -rf /usr/lib64/libnss*
-#rm -rf /usr/lib64/libcidn*
-#rm -rf /usr/lib64/libglapi*
-#rm -rf /usr/lib64/libidn*
+rm -rf /usr/lib64/libncurse*
+#rm -rf /usr/lib64/libcrypt* deleting this fucks up login
+rm -rf /usr/lib64/libsmime3.so
+rm -rf /usr/lib64/libsmart*
+#rm -rf /usr/lib64/libexpa* deleting this fucks up login/boot
+rm -rf /usr/lib64/libinfo*
+rm -rf /usr/lib64/librpmio*
+rm -rf /usr/lib64/libssh2*
+rm -rf /usr/lib64/liblua*
+#rm -rf /usr/lib64/libnss* fucks up boot
+rm -rf /usr/lib64/libcidn*
+rm -rf /usr/lib64/libglapi*
+rm -rf /usr/lib64/libidn*
 # rm -rf /usr/lib64/libgpg* deleting this fucks up everything
-#rm -rf /usr/lib64/libustr*
-#rm -rf /usr/lib64/libcurse*
-#rm -rf /usr/lib64/libnsprt4*
-#rm -rf /usr/lib64/libblkid*
-#rm -rf /usr/lib64/libsemanage*
-# rm -rf /usr/lib64/libmount*
+rm -rf /usr/lib64/libustr*
+rm -rf /usr/lib64/libcurse*
+rm -rf /usr/lib64/libnsprt4*
+#rm -rf /usr/lib64/libblkid* # fucks up the boot completely
+rm -rf /usr/lib64/libsemanage*
+rm -rf /usr/lib64/libmount*
 
 rm -rf /usr/bin/trust
 rm -rf /usr/bin/certutil
