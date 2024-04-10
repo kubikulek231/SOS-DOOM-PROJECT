@@ -12,6 +12,7 @@
 error=0
 autopurge=0
 safepurge=0
+noreboot=0
 
 # Run purge automatically when setup is finished and -a or --autopurge is specified
 while [[ $# -gt 0 ]]; do
@@ -21,6 +22,9 @@ while [[ $# -gt 0 ]]; do
       ;;
     -s | --safepurge)
       safepurge=1
+      ;;
+    -n | --noreboot)
+      noreboot=1
       ;;
     -*)
       echo "Invalid option: $1" >&2
@@ -39,6 +43,12 @@ fi
 if [[ $autopurge == 1 && $safepurge == 1 ]]; then
   echo -e "\e[33mSafe purge flag specified, autopurge will run in safe mode!\e[0m"
 fi
+
+# Echo running onlyinstall
+if [[ $autopurge == 1 && $safepurge == 1 && $noreboot == 1 ]]; then
+  echo -e "\e[33mNoreboot flag specified, system wont reboot after autopurge!\e[0m"
+fi
+
 
 # ---------------------------------------------------------------------
 #                    Script dependencies installation
@@ -423,9 +433,13 @@ if [ $autopurge == 1 ]; then
     # Run autopurge
     /root/run-purge.sh $safepurge
 
-    # Reboot ...
-    echo -e "\e[33mRebooting...\e[0m"
-    reboot
+    # Echo running autopurge
+    if [[ $noreboot == 0 ]]; then
+        # Give user 3 seconds to cancel and then reboot
+        echo -e "\e[33mRebooting in 3 second...\e[0m"
+        sleep 3
+        reboot
+    fi
 fi
 
 # End of the script

@@ -27,7 +27,7 @@ done
 
 
 # Echo running onlyinstall
-if [[ $safepurge == 1 ]]; then
+if [ $safepurge == 1 ]; then
   echo -e "\e[33mSafe purge flag specified, purge will work in safe mode!\e[0m"
 fi
 
