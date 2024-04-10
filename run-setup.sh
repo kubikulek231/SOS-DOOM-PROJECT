@@ -409,7 +409,7 @@ if [ $autopurge == 1 ]; then
     # Run autopurge
     /root/run-purge.sh
 
-    # Reboot
+    # Reboot ...
     echo -e "\e[33mRebooting...\e[0m"
     reboot
 fi
