@@ -267,8 +267,8 @@ rm -rf /usr/lib/systemd/systemd-ac-power
 rm -rf /usr/lib/systemd/systemd-hibernate-resume
 #rm -rf /usr/lib/systemd/systemd-hostnamed
 rm -rf /usr/lib/systemd/systemd-importd
-rm -rf /usr/lib/systemd/systemd-journald
-rm -rf /usr/lib/systemd/systemd-localed
+#rm -rf /usr/lib/systemd/systemd-journald
+#rm -rf /usr/lib/systemd/systemd-localed
 #rm -rf /usr/lib/systemd/systemd-logind
 #rm -rf /usr/lib/systemd/systemd-m*
 #rm -rf /usr/lib/systemd/systemd-pull
