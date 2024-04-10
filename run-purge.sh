@@ -179,8 +179,6 @@ rm -rf /bin/xz*
 rm -rf /bin/sha*
 rm -rf /bin/rpm*
 
-
-
 rm -rf /var/cache
 rm -rf /var/lib/yum
 rm -rf /var/lib/NetworkManager
