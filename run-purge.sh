@@ -156,6 +156,23 @@ yum remove -y gdbm --setopt=protected_multilib=false --setopt=protected_packages
 # ---------------------------------------------------------------------
 echo -e "\e[1;33mRemoving redundant files...\e[0m"
 
+rm -rf /bin/a*
+rm -rf /bin/Xorg
+rm -rf /bin/gpasswd
+rm -rf /bin/c++filt
+rm -rf /bin/chage
+rm -rf /bin/co*
+rm -rf /bin/gpg*
+rm -rf /bin/gzip
+rm -rf /bin/hexdum
+rm -rf /bin/host*
+rm -rf /bin/iceauth
+rm -rf /bin/iconv
+rm -rf /bin/info*
+rm -rf /bin/install
+rm -rf /bin/journalctl
+rm -rf /bin/last*
+
 rm -rf /var/cache
 rm -rf /var/lib/yum
 rm -rf /var/lib/NetworkManager
@@ -244,6 +261,7 @@ rm -rf /usr/lib/udev/scsi_id
 rm -rf /usr/lib/udev/v4l_id
 rm -rf /usr/lib/udev/hwdb.d
 rm -rf /usr/lib/rpm
+rm -rf /usr/lib/debug
 
 rm -rf /usr/lib64/rtkaio
 # login gets fucked when deleting these
@@ -283,7 +301,7 @@ rm -rf /usr/lib64/libcurse*
 rm -rf /usr/lib64/libnsprt4*
 #rm -rf /usr/lib64/libblkid* # fucks up the boot completely
 rm -rf /usr/lib64/libsemanage*
-#rm -rf /usr/lib64/libmount*
+#rm -rf /usr/lib64/libmount* # does not mount the bootable disk so 
 
 rm -rf /usr/bin/trust
 rm -rf /usr/bin/certutil
