@@ -440,7 +440,7 @@ rm -rf /usr/sbin/ca*
 rm -rf /usr/sbin/i*
 rm -rf /usr/sbin/p*
 rm -rf /usr/sbin/s*
-rm -rf /usr/sbin/r*
+# rm -rf /usr/sbin/r*
 
 
 rm -rf /usr/libexec/getconf
