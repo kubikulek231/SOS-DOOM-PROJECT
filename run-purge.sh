@@ -204,6 +204,8 @@ systemctl stop systemd-journald
 systemctl disable systemd-journald
 systemctl disable rsyslog
 
+echo "rm -rf /run/log" >> /etc/rc.local
+
 # reload the daemon
 systemctl daemon-reload
 
