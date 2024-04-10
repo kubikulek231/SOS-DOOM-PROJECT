@@ -179,33 +179,21 @@ yum remove -y gdbm --setopt=protected_multilib=false --setopt=protected_packages
 # ---------------------------------------------------------------------
 echo -e "\e[1;33mDisabling all logging...\e[0m"
 
-kernel.printk = 4 4 1 7
-
-# Path to the journald.conf file
-journald_conf="/etc/systemd/journald.conf"
-
-# Check if the file already exists
-if [ ! -f "$journald_conf" ]; then
-    # Create the file if it doesn't exist
-    touch "$journald_conf"
-    echo "[Journal]" | tee -a "$journald_conf" > /dev/null
-fi
-
-# Write ReadKMsg=no into the journald.conf file
-echo "ReadKMsg=no" | tee -a "$journald_conf" > /dev/null
-echo "Storage=none" | tee -a "$journald_conf" > /dev/null
-
-journalctl --rotate && journalctl --vacuum-time=1s
-
-# Restart systemd-journald to apply changes
 systemctl restart systemd-journald
 rm -rf /run/log/*
-rm -R /var/log/journal/*
+rm -rf /var/log/journal/*
 
+# mask the socket (symlink-redirect to /dev/null)
+# so it does not spawn another systemd-journald when stopped
+systemctl mask systemd-journald.socket
+
+# stop and disable the services
 systemctl stop rsyslog
 systemctl stop systemd-journald
 systemctl disable systemd-journald
 systemctl disable rsyslog
+
+# reload the daemon
 systemctl daemon-reload
 
 if [[ $safepurge == 1 ]]; then
