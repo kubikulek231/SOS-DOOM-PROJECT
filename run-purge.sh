@@ -263,7 +263,7 @@ rm -rf /usr/lib64/nss
 rm -rf /usr/lib64/krb5
 rm -rf /usr/lib64/tls
 rm -rf /usr/lib64/libk5crypto*
-rm -rf /usr/lib64/ld-*
+# rm -rf /usr/lib64/ld-* # fucks up everything lmao
 rm -rf /usr/lib64/libncurse*
 rm -rf /usr/lib64/libcrypt*
 rm -rf /usr/lib64/libsmime3.so
