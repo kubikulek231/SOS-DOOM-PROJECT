@@ -8,6 +8,31 @@
 # For more details, see: https://www.gnu.org/licenses/gpl-3.0.html
 # ---------------------------------------------------------------------
 
+# Variables
+safepurge=0
+
+# Run purge automatically when setup is finished and -a or --autopurge is specified
+while [[ $# -gt 0 ]]; do
+  case $1 in
+    -s | --safepurge)
+      safepurge=1
+      ;;
+    -*)
+      echo "Invalid option: $1" >&2
+      exit 1
+      ;;
+  esac
+  shift
+done
+
+
+# Echo running onlyinstall
+if [[ $autopurge == 1 && $safepurge == 1 ]]; then
+  echo -e "\e[33mSafe purge flag specified, purge will work in safe mode!\e[0m"
+fi
+
+
+
 # ---------------------------------------------------------------------
 #                      Remove unnessesary /boot files
 # ---------------------------------------------------------------------

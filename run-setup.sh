@@ -11,13 +11,16 @@
 # Variables
 error=0
 autopurge=0
-
+safepurge=0
 
 # Run purge automatically when setup is finished and -a or --autopurge is specified
 while [[ $# -gt 0 ]]; do
   case $1 in
     -a | --autopurge)
       autopurge=1
+      ;;
+    -s | --safepurge)
+      safepurge=1
       ;;
     -*)
       echo "Invalid option: $1" >&2
@@ -30,6 +33,11 @@ done
 # Echo running autopurge
 if [[ $autopurge == 1 ]]; then
   echo -e "\e[33mAutopurge flag was specified, purge script will be executed when setup is finished!\e[0m"
+fi
+
+# Echo running onlyinstall
+if [[ $autopurge == 1 && $safepurge == 1 ]]; then
+  echo -e "\e[33mSafe purge flag specified, autopurge will run in safe mode!\e[0m"
 fi
 
 # ---------------------------------------------------------------------
@@ -399,6 +407,12 @@ fi
 
 # When autopurge is set
 if [ $autopurge == 1 ]; then
+
+    parameter=""
+    if [[ $safepurge == 1 ]]; then
+        parameter="-s"
+    fi
+
     # Autopurge countdown
     echo -e "\e[33mAutopurge flag was specified.\e[0m"
     echo -e "\e[33mExecuting autopurge in 3 seconds...\e[0m"
@@ -407,7 +421,7 @@ if [ $autopurge == 1 ]; then
     sleep 3
 
     # Run autopurge
-    /root/run-purge.sh
+    /root/run-purge.sh $safepurge
 
     # Reboot ...
     echo -e "\e[33mRebooting...\e[0m"
