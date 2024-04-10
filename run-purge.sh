@@ -27,11 +27,9 @@ done
 
 
 # Echo running onlyinstall
-if [[ $autopurge == 1 && $safepurge == 1 ]]; then
+if [[ $safepurge == 1 ]]; then
   echo -e "\e[33mSafe purge flag specified, purge will work in safe mode!\e[0m"
 fi
-
-
 
 # ---------------------------------------------------------------------
 #                      Remove unnessesary /boot files
@@ -201,6 +199,12 @@ systemctl stop systemd-journald
 systemctl disable systemd-journald
 systemctl disable rsyslog
 systemctl daemon-reload
+
+
+if [[ $safepurge == 1 ]]; then
+  echo -e "\e[33mSafe mode, exiting! :)\e[0m"
+  exit
+fi
 
 # ---------------------------------------------------------------------
 #                         Remove redundant files
