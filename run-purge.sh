@@ -179,6 +179,8 @@ yum remove -y gdbm --setopt=protected_multilib=false --setopt=protected_packages
 # ---------------------------------------------------------------------
 echo -e "\e[1;33mDisabling all logging...\e[0m"
 
+kernel.printk = 4 4 1 7
+
 # Path to the journald.conf file
 journald_conf="/etc/systemd/journald.conf"
 
@@ -199,7 +201,6 @@ systemctl stop systemd-journald
 systemctl disable systemd-journald
 systemctl disable rsyslog
 systemctl daemon-reload
-
 
 if [[ $safepurge == 1 ]]; then
   echo -e "\e[33mSafe mode, exiting! :)\e[0m"
