@@ -266,18 +266,18 @@ rm -rf /usr/lib/systemd/systemd-cgroups-agent
 #rm -rf /usr/lib/systemd/systemd-fsck
 rm -rf /usr/lib/systemd/systemd-hibernate-resume
 #rm -rf /usr/lib/systemd/systemd-hostnamed
-rm -rf /usr/lib/systemd/systemd-importd
+#rm -rf /usr/lib/systemd/systemd-importd
 rm -rf /usr/lib/systemd/systemd-journald
-rm -rf /usr/lib/systemd/systemd-localed
-rm -rf /usr/lib/systemd/systemd-logind
-rm -rf /usr/lib/systemd/systemd-m*
-rm -rf /usr/lib/systemd/systemd-pull
-rm -rf /usr/lib/systemd/systemd-q*
-rm -rf /usr/lib/systemd/systemd-r*
-rm -rf /usr/lib/systemd/systemd-sl*
-rm -rf /usr/lib/systemd/systemd-t*
-rm -rf /usr/lib/systemd/systemd-u*
-rm -rf /usr/lib/systemd/systemd-vc*
+#rm -rf /usr/lib/systemd/systemd-localed
+#rm -rf /usr/lib/systemd/systemd-logind
+#rm -rf /usr/lib/systemd/systemd-m*
+#rm -rf /usr/lib/systemd/systemd-pull
+##rm -rf /usr/lib/systemd/systemd-q*
+#rm -rf /usr/lib/systemd/systemd-r*
+#rm -rf /usr/lib/systemd/systemd-sl*
+#rm -rf /usr/lib/systemd/systemd-t*
+#rm -rf /usr/lib/systemd/systemd-u*
+#rm -rf /usr/lib/systemd/systemd-vc*
 
 
 rm -rf /usr/bin/a*
