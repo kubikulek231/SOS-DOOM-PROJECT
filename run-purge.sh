@@ -156,28 +156,6 @@ yum remove -y gdbm --setopt=protected_multilib=false --setopt=protected_packages
 # ---------------------------------------------------------------------
 echo -e "\e[1;33mRemoving redundant files...\e[0m"
 
-rm -rf /bin/a*
-rm -rf /bin/gpasswd
-rm -rf /bin/c++filt
-rm -rf /bin/chage
-rm -rf /bin/co*
-rm -rf /bin/gpg*
-rm -rf /bin/gzip
-rm -rf /bin/hexdum
-rm -rf /bin/host*
-rm -rf /bin/iceauth
-rm -rf /bin/iconv
-rm -rf /bin/info*
-rm -rf /bin/install
-rm -rf /bin/last*
-rm -rf /bin/j*
-rm -rf /bin/g*
-rm -rf /bin/f*
-rm -rf /bin/i*
-rm -rf /bin/z*
-rm -rf /bin/xz*
-rm -rf /bin/sha*
-rm -rf /bin/rpm*
 
 rm -rf /var/cache
 rm -rf /var/lib/yum
@@ -268,6 +246,62 @@ rm -rf /usr/lib/udev/v4l_id
 rm -rf /usr/lib/udev/hwdb.d
 rm -rf /usr/lib/rpm
 rm -rf /usr/lib/debug
+rm -rf /usr/lib/dracut
+rm -rf /usr/lib/firmware
+rm -rf /usr/lib/kbd
+rm -rf /usr/lib/games
+rm -rf /usr/lib/sse2
+rm -rf /usr/lib/debugudev
+rm -rf /usr/lib/tmpfiles.d
+rm -rf /usr/lib/sysctl.d
+rm -rf /usr/lib/os-release
+rm -rf /usr/lib/modprobe.d
+rm -rf /usr/lib/binfmt.d
+rm -rf /usr/lib/systemd/systemd-ac-power
+rm -rf /usr/lib/systemd/systemd-activate
+rm -rf /usr/lib/systemd/systemd-backlight
+rm -rf /usr/lib/systemd/systemd-binfmt
+rm -rf /usr/lib/systemd/systemd-coredump
+rm -rf /usr/lib/systemd/systemd-cgroups-agent
+rm -rf /usr/lib/systemd/systemd-fsck
+rm -rf /usr/lib/systemd/systemd-hibernate-resume
+rm -rf /usr/lib/systemd/systemd-hostnamed
+rm -rf /usr/lib/systemd/systemd-importd
+rm -rf /usr/lib/systemd/systemd-journald
+rm -rf /usr/lib/systemd/systemd-localed
+rm -rf /usr/lib/systemd/systemd-logind
+rm -rf /usr/lib/systemd/systemd-m*
+rm -rf /usr/lib/systemd/systemd-pull
+rm -rf /usr/lib/systemd/systemd-q*
+rm -rf /usr/lib/systemd/systemd-r*
+rm -rf /usr/lib/systemd/systemd-sl*
+rm -rf /usr/lib/systemd/systemd-t*
+rm -rf /usr/lib/systemd/systemd-u*
+rm -rf /usr/lib/systemd/systemd-vc*
+
+
+rm -rf /usr/bin/a*
+rm -rf /usr/bin/gpasswd
+rm -rf /usr/bin/c++filt
+rm -rf /usr/bin/chage
+rm -rf /usr/bin/co*
+rm -rf /usr/bin/gpg*
+rm -rf /usr/bin/gzip
+rm -rf /usr/bin/hexdum
+rm -rf /usr/bin/host*
+rm -rf /usr/bin/iceauth
+rm -rf /usr/bin/iconv
+rm -rf /usr/bin/info*
+rm -rf /usr/bin/install
+rm -rf /usr/bin/last*
+rm -rf /usr/bin/j*
+rm -rf /usr/bin/g*
+rm -rf /usr/bin/f*
+rm -rf /usr/bin/i*
+rm -rf /usr/bin/z*
+rm -rf /usr/bin/xz*
+rm -rf /usr/bin/sha*
+rm -rf /usr/bin/rpm*
 
 rm -rf /usr/lib64/rtkaio
 # login gets fucked when deleting these
