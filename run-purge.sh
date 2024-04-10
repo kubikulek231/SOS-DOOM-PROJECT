@@ -263,7 +263,7 @@ rm -rf /usr/lib64/nss
 rm -rf /usr/lib64/krb5
 rm -rf /usr/lib64/tls
 rm -rf /usr/lib64/libk5crypto*
-# rm -rf /usr/lib64/ld-* # fucks up everything lmao
+# rm -rf /usr/lib64/ld-* deleting this fucks up everything
 rm -rf /usr/lib64/libncurse*
 rm -rf /usr/lib64/libcrypt*
 rm -rf /usr/lib64/libsmime3.so
@@ -277,7 +277,7 @@ rm -rf /usr/lib64/libnss*
 rm -rf /usr/lib64/libcidn*
 rm -rf /usr/lib64/libglapi*
 rm -rf /usr/lib64/libidn*
-rm -rf /usr/lib64/libgpg*
+# rm -rf /usr/lib64/libgpg* deleting this fucks up everything
 rm -rf /usr/lib64/libustr*
 rm -rf /usr/lib64/libcurse*
 rm -rf /usr/lib64/libnsprt4*
