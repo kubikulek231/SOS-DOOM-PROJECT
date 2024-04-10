@@ -434,7 +434,7 @@ if [ $autopurge == 1 ]; then
     /root/run-purge.sh $parameter
 
     # Echo running autopurge
-    if [[ $noreboot == 0 ]]; then
+    if [ $noreboot == 0 ]; then
         # Give user 3 seconds to cancel and then reboot
         echo -e "\e[33mRebooting in 3 second...\e[0m"
         sleep 3
