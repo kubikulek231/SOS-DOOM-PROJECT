@@ -121,7 +121,24 @@ else
         echo -e "\e[1;31mAutoupdater: FAILED!\e[0m"
     fi
     # Exit to run again
-    echo -e "\e[1;33mSetup script is now updated. Please run ./run-setup.sh again.\e[0m"
+    echo -e "\e[1;33mSetup script is now updated.\e[0m"
+    # Start countdown to run again
+    echo -e "\e[1;33mScript will be run again in 3 seconds...\e[0m"
+
+    parameter=""
+
+    # If autopurge is 1, set parameter to "-a"
+    if [[ $autopurge == 1 ]]; then
+        parameter="-a"
+    fi
+    
+    # Wait 3 seconds for user to cancel
+    sleep 3
+
+    # Run the newly updated script
+    /root/run-setup.sh $parameter
+
+    # Exit the initial script when finished
     exit
 fi
 
@@ -385,6 +402,8 @@ if [ $autopurge == 1 ]; then
     # Autopurge countdown
     echo -e "\e[33mAutopurge flag was specified.\e[0m"
     echo -e "\e[33mExecuting autopurge in 3 seconds...\e[0m"
+
+    # Wait 3 seconds for user to cancel
     sleep 3
 
     # Run autopurge
