@@ -230,6 +230,7 @@ rm -rf /usr/share/systemtap
 rm -rf /usr/share/licenses
 rm -rf /usr/share/man
 
+# *** lib done ***
 rm -rf /usr/lib/kernel
 rm -rf /usr/lib/modules
 rm -rf /usr/lib/locale
@@ -253,32 +254,32 @@ rm -rf /usr/lib/games
 rm -rf /usr/lib/sse2
 rm -rf /usr/lib/debugudev
 rm -rf /usr/lib/tmpfiles.d
-#rm -rf /usr/lib/sysctl.d
-#rm -rf /usr/lib/os-release
-#rm -rf /usr/lib/modprobe.d
-#rm -rf /usr/lib/binfmt.d
-#rm -rf /usr/lib/systemd/systemd-ac-power
-#rm -rf /usr/lib/systemd/systemd-activate
-#rm -rf /usr/lib/systemd/systemd-backlight
-#rm -rf /usr/lib/systemd/systemd-binfmt
-#rm -rf /usr/lib/systemd/systemd-coredump
-#rm -rf /usr/lib/systemd/systemd-cgroups-agent
-#rm -rf /usr/lib/systemd/systemd-fsck
-#rm -rf /usr/lib/systemd/systemd-hibernate-resume
-#rm -rf /usr/lib/systemd/systemd-hostnamed
-#rm -rf /usr/lib/systemd/systemd-importd
-#rm -rf /usr/lib/systemd/systemd-journald
-#rm -rf /usr/lib/systemd/systemd-localed
+#rm -rf /usr/lib/udev will fuck os
+#rm -rf /usr/lib/sysctl.d will fuck os
+#rm -rf /usr/lib/os-release will fuck os
+#rm -rf /usr/lib/modprobe.d will fuck os
+#rm -rf /usr/lib/binfmt.d will fuck os
+rm -rf /usr/lib/systemd/systemd-ac-power
+rm -rf /usr/lib/systemd/systemd-activate
+rm -rf /usr/lib/systemd/systemd-backlight
+rm -rf /usr/lib/systemd/systemd-binfmt
+rm -rf /usr/lib/systemd/systemd-coredump
+rm -rf /usr/lib/systemd/systemd-cgroups-agent
+rm -rf /usr/lib/systemd/systemd-fsck
+rm -rf /usr/lib/systemd/systemd-hibernate-resume
+rm -rf /usr/lib/systemd/systemd-hostnamed
+rm -rf /usr/lib/systemd/systemd-importd
+rm -rf /usr/lib/systemd/systemd-journald
+rm -rf /usr/lib/systemd/systemd-localed
 #rm -rf /usr/lib/systemd/systemd-logind
-#rm -rf /usr/lib/systemd/systemd-m*
-#rm -rf /usr/lib/systemd/systemd-pull
-##rm -rf /usr/lib/systemd/systemd-q*
-#rm -rf /usr/lib/systemd/systemd-r*
-#rm -rf /usr/lib/systemd/systemd-sl*
-#rm -rf /usr/lib/systemd/systemd-t*
-#rm -rf /usr/lib/systemd/systemd-u*
-#rm -rf /usr/lib/systemd/systemd-vc*
-
+rm -rf /usr/lib/systemd/systemd-m*
+rm -rf /usr/lib/systemd/systemd-pull
+rm -rf /usr/lib/systemd/systemd-q*
+#rm -rf /usr/lib/systemd/systemd-r* # lmao readhead?
+rm -rf /usr/lib/systemd/systemd-sl*
+rm -rf /usr/lib/systemd/systemd-t*
+rm -rf /usr/lib/systemd/systemd-update*
+rm -rf /usr/lib/systemd/systemd-vc*
 
 rm -rf /usr/bin/a*
 rm -rf /usr/bin/gpasswd
@@ -302,6 +303,25 @@ rm -rf /usr/bin/z*
 rm -rf /usr/bin/xz*
 rm -rf /usr/bin/sha*
 rm -rf /usr/bin/rpm*
+rm -rf /usr/bin/system-analyze*
+rm -rf /usr/bin/base*
+rm -rf /usr/bin/bg
+rm -rf /usr/bin/cal
+rm -rf /usr/bin/cat
+rm -rf /usr/bin/catchsegv
+rm -rf /usr/bin/ch*
+rm -rf /usr/bin/ck*
+rm -rf /usr/bin/cl*
+rm -rf /usr/bin/cm*
+rm -rf /usr/bin/cpio
+rm -rf /usr/bin/cr*
+rm -rf /usr/bin/cs*
+rm -rf /usr/bin/cu*
+rm -rf /usr/bin/cvt
+rm -rf /usr/bin/date
+# rm -rf /usr/bin/db* fails to boot
+
+
 
 rm -rf /usr/lib64/rtkaio
 # login gets fucked when deleting these
