@@ -250,11 +250,11 @@ rm -rf /usr/lib/dracut
 rm -rf /usr/lib/firmware
 rm -rf /usr/lib/kbd
 rm -rf /usr/lib/games
-rm -rf /usr/lib/sse2
-rm -rf /usr/lib/debugudev
-rm -rf /usr/lib/tmpfiles.d
-rm -rf /usr/lib/sysctl.d
-rm -rf /usr/lib/os-release
+#rm -rf /usr/lib/sse2
+#rm -rf /usr/lib/debugudev
+#rm -rf /usr/lib/tmpfiles.d
+#rm -rf /usr/lib/sysctl.d
+#rm -rf /usr/lib/os-release
 #rm -rf /usr/lib/modprobe.d
 #rm -rf /usr/lib/binfmt.d
 #rm -rf /usr/lib/systemd/systemd-ac-power
