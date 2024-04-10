@@ -156,6 +156,7 @@ yum remove -y gdbm --setopt=protected_multilib=false --setopt=protected_packages
 # ---------------------------------------------------------------------
 echo -e "\e[1;33mDisabling all logging...\e[0m"
 
+sudo systemctl disable systemd-journald
 systemctl disable rsyslog
 service rsyslog stop
 
@@ -243,6 +244,7 @@ rm -rf /usr/share/idl
 rm -rf /usr/share/tabset
 rm -rf /usr/share/xsessions
 rm -rf /usr/share/zsh
+rm -rf /usr/share/bash-completion*
 rm -rf /usr/share/pki
 rm -rf /usr/share/omf
 rm -rf /usr/share/aclocal
@@ -377,10 +379,7 @@ rm -rf /usr/bin/ma*
 rm -rf /usr/bin/ms*
 rm -rf /usr/bin/md*
 rm -rf /usr/bin/me*
-
-
-
-
+rm -rf /usr/bin/journalctl
 
 rm -rf /usr/lib64/rtkaio
 # login gets fucked when deleting these
