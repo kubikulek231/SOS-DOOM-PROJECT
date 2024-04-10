@@ -258,10 +258,10 @@ rm -rf /usr/lib/os-release
 rm -rf /usr/lib/modprobe.d
 rm -rf /usr/lib/binfmt.d
 rm -rf /usr/lib/systemd/systemd-ac-power
-rm -rf /usr/lib/systemd/systemd-activate
-rm -rf /usr/lib/systemd/systemd-backlight
+#rm -rf /usr/lib/systemd/systemd-activate
+#rm -rf /usr/lib/systemd/systemd-backlight
 #rm -rf /usr/lib/systemd/systemd-binfmt
-rm -rf /usr/lib/systemd/systemd-coredump
+#rm -rf /usr/lib/systemd/systemd-coredump
 #rm -rf /usr/lib/systemd/systemd-cgroups-agent
 #rm -rf /usr/lib/systemd/systemd-fsck
 rm -rf /usr/lib/systemd/systemd-hibernate-resume
