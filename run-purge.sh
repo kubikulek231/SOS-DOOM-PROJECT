@@ -193,8 +193,12 @@ fi
 # Write ReadKMsg=no into the journald.conf file
 echo "ReadKMsg=no" | tee -a "$journald_conf" > /dev/null
 
+journalctl --rotate && journalctl --vacuum-time=1s
+
 # Restart systemd-journald to apply changes
 systemctl restart systemd-journald
+rm -rf /run/log/*
+rm -R /var/log/journal/*
 
 systemctl stop rsyslog
 systemctl stop systemd-journald
@@ -241,6 +245,7 @@ rm -rf /etc/udev/hwdb.bin
 rm -rf /etc/pki/ca-trust
 rm -rf /etc/rsyslog.d/
 rm -rf /etc/systemd/journald*
+rm -rf /etc/selinux/targeted/active/modules/100/ # get back here? del selinux as whole?
 
 rm -rf /usr/include
 rm -rf /usr/games
