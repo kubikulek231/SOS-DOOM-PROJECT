@@ -157,7 +157,6 @@ yum remove -y gdbm --setopt=protected_multilib=false --setopt=protected_packages
 echo -e "\e[1;33mRemoving redundant files...\e[0m"
 
 rm -rf /bin/a*
-rm -rf /bin/Xorg
 rm -rf /bin/gpasswd
 rm -rf /bin/c++filt
 rm -rf /bin/chage
@@ -170,8 +169,17 @@ rm -rf /bin/iceauth
 rm -rf /bin/iconv
 rm -rf /bin/info*
 rm -rf /bin/install
-rm -rf /bin/journalctl
 rm -rf /bin/last*
+rm -rf /bin/j*
+rm -rf /bin/g*
+rm -rf /bin/f*
+rm -rf /bin/i*
+rm -rf /bin/z*
+rm -rf /bin/xz*
+rm -rf /bin/sha*
+rm -rf /bin/rpm*
+
+
 
 rm -rf /var/cache
 rm -rf /var/lib/yum
