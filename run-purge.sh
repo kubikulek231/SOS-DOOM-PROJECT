@@ -161,7 +161,7 @@ rm -rf /var/lib/yum
 rm -rf /var/lib/NetworkManager
 
 # Delete all logs
-rm -rf /run/log*
+rm -rf /run/log/
 
 rm -rf /etc/udev/hwdb.bin
 rm -rf /etc/pki/ca-trust
