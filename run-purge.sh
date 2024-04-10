@@ -257,7 +257,7 @@ rm -rf /usr/lib/sysctl.d
 rm -rf /usr/lib/os-release
 rm -rf /usr/lib/modprobe.d
 rm -rf /usr/lib/binfmt.d
-rm -rf /usr/lib/systemd/systemd-ac-power
+#rm -rf /usr/lib/systemd/systemd-ac-power
 #rm -rf /usr/lib/systemd/systemd-activate
 #rm -rf /usr/lib/systemd/systemd-backlight
 #rm -rf /usr/lib/systemd/systemd-binfmt
@@ -355,6 +355,3 @@ rm -rf /usr/libexec/getconf
 rm -rf /usr/libexec/awk
 rm -rf /usr/libexec/selinux
 rm -rf /usr/libexec/sudo
-
-
-
