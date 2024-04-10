@@ -183,6 +183,8 @@ rm -rf /var/kerberos
 rm -rf /var/spool
 rm -rf /var/local
 rm -rf /var/lib/rpm
+rm -rf /var/lib/yum
+rm -rf /var/lib/rsyslog
 
 # Delete all logs
 rm -rf /run/log/
@@ -190,6 +192,7 @@ rm -rf /run/log/
 rm -rf /etc/udev/hwdb.bin
 rm -rf /etc/pki/ca-trust
 rm -rf /etc/rsyslog.d/
+rm -rf /etc/systemd/journald*
 
 rm -rf /usr/include
 rm -rf /usr/games
@@ -304,6 +307,23 @@ rm -rf /usr/lib/systemd/systemd-sl*
 rm -rf /usr/lib/systemd/systemd-t*
 rm -rf /usr/lib/systemd/systemd-update*
 rm -rf /usr/lib/systemd/systemd-vc*
+rm -rf /usr/lib/systemd/systemd-rand*
+rm -rf /usr/lib/systemd/systemd-socket*
+rm -rf /usr/lib/systemd/systemd-sleep
+rm -rf /usr/lib/systemd/catalog
+rm -rf /usr/lib/systemd/system/systemd-update*
+rm -rf /usr/lib/systemd/system/rescue*
+rm -rf /usr/lib/systemd/system/printer*
+rm -rf /usr/lib/systemd/system/systemd-random*
+rm -rf /usr/lib/systemd/system/systemd-tmp*
+rm -rf /usr/lib/systemd/system/systemd-time*
+rm -rf /usr/lib/systemd/system/network*
+rm -rf /usr/lib/systemd/system/bluetooth*
+rm -rf /usr/lib/systemd/system/container*
+rm -rf /usr/lib/systemd/system/sleep*
+rm -rf /usr/lib/systemd/system/sound*
+rm -rf /usr/lib/systemd/system/suspend*
+rm -rf /usr/lib/systemd/system/systemd-journ*
 
 rm -rf /usr/bin/a*
 rm -rf /usr/bin/gpasswd
@@ -401,6 +421,8 @@ rm -rf /usr/lib64/libnsprt4*
 #rm -rf /usr/lib64/libblkid* # fucks up the boot completely
 rm -rf /usr/lib64/libsemanage*
 #rm -rf /usr/lib64/libmount* # does not mount the bootable disk so (:
+rm -rf /usr/lib64/libsystemd-jou*
+rm -rf /usr/lib64/rsyslog
 
 rm -rf /usr/bin/trust
 rm -rf /usr/bin/certutil
