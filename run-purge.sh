@@ -283,7 +283,7 @@ rm -rf /usr/lib64/libcurse*
 rm -rf /usr/lib64/libnsprt4*
 rm -rf /usr/lib64/libblkid*
 rm -rf /usr/lib64/libsemanage*
-rm -rf /usr/lib64/libmount*
+# rm -rf /usr/lib64/libmount*
 rm -rf /usr/lib64/libnss*
 
 rm -rf /usr/bin/trust
