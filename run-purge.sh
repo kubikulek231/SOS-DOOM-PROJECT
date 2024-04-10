@@ -179,21 +179,6 @@ yum remove -y gdbm --setopt=protected_multilib=false --setopt=protected_packages
 # ---------------------------------------------------------------------
 echo -e "\e[1;33mDisabling all logging...\e[0m"
 
-kernel.printk = 4 4 1 7
-
-# Path to the journald.conf file
-journald_conf="/etc/systemd/journald.conf"
-
-# Check if the file already exists
-if [ ! -f "$journald_conf" ]; then
-    # Create the file if it doesn't exist
-    touch "$journald_conf"
-    echo "[Journal]" | tee -a "$journald_conf" > /dev/null
-fi
-
-# Set maximal memory usage to 1K
-echo "SystemMaxUse=1K" | tee -a "$journald_conf" > /dev/null
-
 # mask the socket (symlink-redirect to /dev/null)
 # so it does not spawn another systemd-journald when stopped
 systemctl mask systemd-journald.socket
@@ -204,7 +189,12 @@ systemctl stop systemd-journald
 systemctl disable systemd-journald
 systemctl disable rsyslog
 
+# desperate solution i guess
+# deletes the file on boot and with systemd-journald disabled it should be ok
 echo "rm -rf /run/log" >> /etc/rc.local
+
+# chmod +x /etc/rc.local
+chmod +x /etc/rc.local
 
 # reload the daemon
 systemctl daemon-reload
