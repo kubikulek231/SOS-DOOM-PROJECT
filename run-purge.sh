@@ -182,12 +182,14 @@ rm -rf /var/games
 rm -rf /var/kerberos
 rm -rf /var/spool
 rm -rf /var/local
+rm -rf /var/lib/rpm
 
 # Delete all logs
 rm -rf /run/log/
 
 rm -rf /etc/udev/hwdb.bin
 rm -rf /etc/pki/ca-trust
+rm -rf /etc/rsyslog.d/
 
 rm -rf /usr/include
 rm -rf /usr/games
