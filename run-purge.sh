@@ -160,27 +160,16 @@ rm -rf /var/cache
 rm -rf /var/lib/yum
 rm -rf /var/lib/NetworkManager
 
+# Delete all logs
+rm -rf /run
+
 rm -rf /etc/udev/hwdb.bin
+rm -rf /etc/pki/ca-trust
 
 rm -rf /usr/include
 rm -rf /usr/games
 rm -rf /usr/etc
 rm -rf /usr/locale
-
-rm -rf /usr/lib/kernel
-rm -rf /usr/lib/modules
-rm -rf /usr/lib/locale
-rm -rf /usr/lib/udev/accelerometer
-rm -rf /usr/lib/udev/ata_id
-rm -rf /usr/lib/udev/cdrom_id
-rm -rf /usr/lib/udev/collect
-rm -rf /usr/lib/udev/libinput-device-group
-rm -rf /usr/lib/udev/libinput-model-quirisk
-rm -rf /usr/lib/udev/mtd_probe
-rm -rf /usr/lib/udev/phys-port-name-gen
-rm -rf /usr/lib/udev/scsi_id
-rm -rf /usr/lib/udev/v4l_id
-rm -rf /usr/lib/udev/hwdb.d
 
 rm -rf /usr/share/doc
 rm -rf /usr/share/man
@@ -240,6 +229,22 @@ rm -rf /usr/share/systemtap
 rm -rf /usr/share/licenses
 rm -rf /usr/share/man
 
+rm -rf /usr/lib/kernel
+rm -rf /usr/lib/modules
+rm -rf /usr/lib/locale
+rm -rf /usr/lib/udev/accelerometer
+rm -rf /usr/lib/udev/ata_id
+rm -rf /usr/lib/udev/cdrom_id
+rm -rf /usr/lib/udev/collect
+rm -rf /usr/lib/udev/libinput-device-group
+rm -rf /usr/lib/udev/libinput-model-quirisk
+rm -rf /usr/lib/udev/mtd_probe
+rm -rf /usr/lib/udev/phys-port-name-gen
+rm -rf /usr/lib/udev/scsi_id
+rm -rf /usr/lib/udev/v4l_id
+rm -rf /usr/lib/udev/hwdb.d
+rm -rf /usr/lib/rpm
+
 rm -rf /usr/lib64/rtkaio
 # login gets fucked when deleting these
 #rm -rf /usr/lib64/audit
@@ -257,12 +262,20 @@ rm -rf /usr/lib64/gconv
 rm -rf /usr/lib64/nss
 rm -rf /usr/lib64/krb5
 rm -rf /usr/lib64/tls
+rm -rf /usr/lib64/libk5crypto*
+
+rm -rf /usr/bin/trust
+rm -rf /usr/bin/certutil
+rm -rf /usr/bin/oldfind
+rm -rf /usr/bin/find
+rm -rf /usr/bin/diff
+
+rm -rf /usr/sbin/fdisk
 
 rm -rf /usr/libexec/getconf
 rm -rf /usr/libexec/awk
 rm -rf /usr/libexec/selinux
 rm -rf /usr/libexec/sudo
-
 
 
 
