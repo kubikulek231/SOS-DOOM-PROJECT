@@ -255,8 +255,8 @@ rm -rf /usr/lib/debugudev
 rm -rf /usr/lib/tmpfiles.d
 rm -rf /usr/lib/sysctl.d
 rm -rf /usr/lib/os-release
-rm -rf /usr/lib/modprobe.d
-rm -rf /usr/lib/binfmt.d
+#rm -rf /usr/lib/modprobe.d
+#rm -rf /usr/lib/binfmt.d
 #rm -rf /usr/lib/systemd/systemd-ac-power
 #rm -rf /usr/lib/systemd/systemd-activate
 #rm -rf /usr/lib/systemd/systemd-backlight
