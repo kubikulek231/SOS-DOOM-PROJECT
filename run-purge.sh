@@ -179,9 +179,20 @@ yum remove -y gdbm --setopt=protected_multilib=false --setopt=protected_packages
 # ---------------------------------------------------------------------
 echo -e "\e[1;33mDisabling all logging...\e[0m"
 
-systemctl restart systemd-journald
-rm -rf /run/log/*
-rm -rf /var/log/journal/*
+kernel.printk = 4 4 1 7
+
+# Path to the journald.conf file
+journald_conf="/etc/systemd/journald.conf"
+
+# Check if the file already exists
+if [ ! -f "$journald_conf" ]; then
+    # Create the file if it doesn't exist
+    touch "$journald_conf"
+    echo "[Journal]" | tee -a "$journald_conf" > /dev/null
+fi
+
+# Set maximal memory usage to 1K
+echo "SystemMaxUse=1K" | tee -a "$journald_conf" > /dev/null
 
 # mask the socket (symlink-redirect to /dev/null)
 # so it does not spawn another systemd-journald when stopped
@@ -206,6 +217,16 @@ fi
 # ---------------------------------------------------------------------
 echo -e "\e[1;33mRemoving redundant files...\e[0m"
 
+# last attempt to prevent systemd-journald lol
+rm -rf /sys/fs/cgroup/devices/system.slice/systemd-jour*
+rm -rf /sys/fs/cgroup/systemd/system.slice/systemd-jour*
+rm -rf /etc/systemd/jour*
+rm -rf /var/lib/rsyslo
+rm -rf /usr/lib/systemd/system/sockets.target.wants/systemd-jour*
+rm -rf /usr/lib/systemd/system/systemd-jou*
+rm -rf /usr/lib64/libsystemd-jou*
+rm -rf /usr/lib64/rsyslog/imjou*
+rm -rf /usr/lib64/rsyslog/onjour*
 
 rm -rf /var/cache
 rm -rf /var/lib/yum
