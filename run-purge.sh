@@ -349,7 +349,7 @@ rm -rf /usr/bin/link*
 rm -rf /usr/bin/libinput-debug*
 rm -rf /usr/bin/linux*
 rm -rf /usr/bin/lo
-rm -rf /usr/bin/ls*
+rm -rf /usr/bin/ls?
 rm -rf /usr/bin/lz*
 rm -rf /usr/bin/ma*
 rm -rf /usr/bin/ms*
