@@ -188,10 +188,12 @@ journald_conf="/etc/systemd/journald.conf"
 if [ ! -f "$journald_conf" ]; then
     # Create the file if it doesn't exist
     touch "$journald_conf"
+    echo "[Journal]" | tee -a "$journald_conf" > /dev/null
 fi
 
 # Write ReadKMsg=no into the journald.conf file
 echo "ReadKMsg=no" | tee -a "$journald_conf" > /dev/null
+echo "Storage=none" | tee -a "$journald_conf" > /dev/null
 
 journalctl --rotate && journalctl --vacuum-time=1s
 
@@ -244,8 +246,7 @@ rm -rf /run/log/
 rm -rf /etc/udev/hwdb.bin
 rm -rf /etc/pki/ca-trust
 rm -rf /etc/rsyslog.d/
-rm -rf /etc/systemd/journald*
-rm -rf /etc/selinux/targeted/active/modules/100/ # get back here? del selinux as whole?
+rm -rf /etc/selinux/
 
 rm -rf /usr/include
 rm -rf /usr/games
@@ -431,7 +432,7 @@ rm -rf /usr/bin/ma*
 rm -rf /usr/bin/ms*
 rm -rf /usr/bin/md*
 rm -rf /usr/bin/me*
-rm -rf /usr/bin/journalctl
+rm -rf /usr/bin/jour*
 
 rm -rf /usr/lib64/rtkaio
 # login gets fucked when deleting these
