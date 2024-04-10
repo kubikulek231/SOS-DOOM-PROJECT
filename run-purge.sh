@@ -152,6 +152,14 @@ yum remove -y libselinux-python --setopt=protected_multilib=false --setopt=prote
 yum remove -y gdbm --setopt=protected_multilib=false --setopt=protected_packages=none
 
 # ---------------------------------------------------------------------
+#                         Disable logging
+# ---------------------------------------------------------------------
+echo -e "\e[1;33mDisabling all logging...\e[0m"
+
+systemctl disable rsyslog
+service rsyslog stop
+
+# ---------------------------------------------------------------------
 #                         Remove redundant files
 # ---------------------------------------------------------------------
 echo -e "\e[1;33mRemoving redundant files...\e[0m"
@@ -160,6 +168,20 @@ echo -e "\e[1;33mRemoving redundant files...\e[0m"
 rm -rf /var/cache
 rm -rf /var/lib/yum
 rm -rf /var/lib/NetworkManager
+rm -rf /var/lib/NetworkManager
+
+rm -rf /var/tmp
+rm -rf /var/lib/anaconda
+rm -rf /var/log/anaconda
+rm -rf /var/log/tuned
+rm -rf /var/log/audit
+rm -rf /var/log/rhsm
+rm -rf /var/db
+rm -rf /var/empty
+rm -rf /var/games
+rm -rf /var/kerberos
+rm -rf /var/spool
+rm -rf /var/local
 
 # Delete all logs
 rm -rf /run/log/
@@ -320,6 +342,21 @@ rm -rf /usr/bin/cu*
 rm -rf /usr/bin/cvt
 rm -rf /usr/bin/date
 # rm -rf /usr/bin/db* fails to boot
+rm -rf /usr/bin/db_*
+rm -rf /usr/bin/kernel*
+rm -rf /usr/bin/libwa*
+rm -rf /usr/bin/link*
+rm -rf /usr/bin/libinput-debug*
+rm -rf /usr/bin/linux*
+rm -rf /usr/bin/lo
+rm -rf /usr/bin/ls*
+rm -rf /usr/bin/lz*
+rm -rf /usr/bin/ma*
+rm -rf /usr/bin/ms*
+rm -rf /usr/bin/md*
+rm -rf /usr/bin/me*
+
+
 
 
 
@@ -361,7 +398,7 @@ rm -rf /usr/lib64/libcurse*
 rm -rf /usr/lib64/libnsprt4*
 #rm -rf /usr/lib64/libblkid* # fucks up the boot completely
 rm -rf /usr/lib64/libsemanage*
-#rm -rf /usr/lib64/libmount* # does not mount the bootable disk so 
+#rm -rf /usr/lib64/libmount* # does not mount the bootable disk so (:
 
 rm -rf /usr/bin/trust
 rm -rf /usr/bin/certutil
