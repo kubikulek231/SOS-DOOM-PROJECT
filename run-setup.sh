@@ -419,7 +419,7 @@ fi
 if [ $autopurge == 1 ]; then
 
     parameter=""
-    if [[ $safepurge == 1 ]]; then
+    if [ $safepurge == 1 ]; then
         parameter="-s"
     fi
 
@@ -431,7 +431,7 @@ if [ $autopurge == 1 ]; then
     sleep 3
 
     # Run autopurge
-    /root/run-purge.sh $safepurge
+    /root/run-purge.sh $parameter
 
     # Echo running autopurge
     if [[ $noreboot == 0 ]]; then
