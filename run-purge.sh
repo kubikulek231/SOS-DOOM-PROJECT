@@ -156,9 +156,11 @@ yum remove -y gdbm --setopt=protected_multilib=false --setopt=protected_packages
 # ---------------------------------------------------------------------
 echo -e "\e[1;33mDisabling all logging...\e[0m"
 
-sudo systemctl disable systemd-journald
+systemctl stop rsyslog
+systemctl stop systemd-journald
+systemctl disable systemd-journald
 systemctl disable rsyslog
-service rsyslog stop
+systemctl daemon-reload
 
 # ---------------------------------------------------------------------
 #                         Remove redundant files
