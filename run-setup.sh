@@ -440,7 +440,7 @@ if [ $autopurge == 1 ]; then
         sleep 3
         reboot
     else
-        echo -e "\e[33mNo reboot was specified.\e[0m"
+        echo -e "\e[33mNot rebooting as noreboot flag was specified.\e[0m"
     fi
 fi
 
