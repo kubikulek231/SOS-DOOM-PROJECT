@@ -10,12 +10,16 @@
 
 # Variables
 safepurge=0
+noreboot=0
 
 # Run purge automatically when setup is finished and -a or --autopurge is specified
 while [[ $# -gt 0 ]]; do
   case $1 in
     -s | --safepurge)
       safepurge=1
+      ;;
+    -n | --noreboot)
+      noreboot=1
       ;;
     -*)
       echo "Invalid option: $1" >&2
@@ -30,6 +34,10 @@ done
 if [ $safepurge == 1 ]; then
   echo -e "\e[33mSafe purge flag specified, purge will work in safe mode!\e[0m"
 fi
+
+# Echo will not reboot on purge
+if [ $noreboot == 1]; then
+  echo -e "\e[33mNoreboot flag specified, will not reboot after finished.\e[0m"
 
 # ---------------------------------------------------------------------
 #                      Remove unnessesary /boot files
@@ -429,11 +437,23 @@ rm -rf /usr/bin/linux*
 rm -rf /usr/bin/lo
 rm -rf /usr/bin/ls?
 rm -rf /usr/bin/lz*
+
 rm -rf /usr/bin/ma*
 rm -rf /usr/bin/ms*
 rm -rf /usr/bin/md*
 rm -rf /usr/bin/me*
 rm -rf /usr/bin/jour*
+rm -rf /usr/bin/nice
+rm -rf /usr/bin/more
+rm -rf /usr/bin/mcookie
+rm -rf /usr/bin/mk*
+rm -rf /usr/bin/mv
+rm -rf /usr/bin/namei
+rm -rf /usr/bin/whoami
+rm -rf /usr/bin/sum
+rm -rf /usr/bin/sync
+rm -rf /usr/bin/snice
+rm -rf /usr/bin/sqlite3
 
 rm -rf /usr/lib64/rtkaio
 # login gets fucked when deleting these
@@ -499,3 +519,14 @@ rm -rf /usr/libexec/getconf
 rm -rf /usr/libexec/awk
 rm -rf /usr/libexec/selinux
 rm -rf /usr/libexec/sudo
+
+# Reboot if noreboot=0
+if [ $noreboot == 1]; then
+  echo -e "\e[33mNot rebooting.\e[0m"
+  exit
+
+echo -e "\e[33mRebooting in 3 seconds...\e[0m"
+
+sleep 3
+
+reboot

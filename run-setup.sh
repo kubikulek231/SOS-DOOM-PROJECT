@@ -415,12 +415,19 @@ else
     echo -e "\e[32mNo errors occured during the execution. :)\e[0m"
 fi
 
+parameter=""
+parameter2=""
+
 # When autopurge is set
 if [ $autopurge == 1 ]; then
-
     parameter=""
+
     if [ $safepurge == 1 ]; then
         parameter="-s"
+    fi
+
+    if [ $noreboot == 1 ]; then
+        parameter2="-n"
     fi
 
     # Autopurge countdown
@@ -431,17 +438,7 @@ if [ $autopurge == 1 ]; then
     sleep 3
 
     # Run autopurge
-    /root/run-purge.sh $parameter
-
-    # Reboot if noreboot is specified
-    if [ $noreboot == 0 ]; then
-        # Give user 3 seconds to cancel and then reboot
-        echo -e "\e[33mRebooting in 3 seconds...\e[0m"
-        sleep 3
-        reboot
-    else
-        echo -e "\e[33mNot rebooting as noreboot flag was specified.\e[0m"
-    fi
+    /root/run-purge.sh $parameter $parameter2
 fi
 
 # End of the script
