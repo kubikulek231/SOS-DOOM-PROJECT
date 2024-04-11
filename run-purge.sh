@@ -521,12 +521,12 @@ rm -rf /usr/libexec/selinux
 rm -rf /usr/libexec/sudo
 
 # Reboot if noreboot=0
-if [ $noreboot == 1]; then
+if [ $noreboot == 1 ]; then
   echo -e "\e[33mNot rebooting.\e[0m"
   exit
+fi
 
 echo -e "\e[33mRebooting in 3 seconds...\e[0m"
-fi
 sleep 3
 
 reboot
