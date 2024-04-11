@@ -463,8 +463,15 @@ rm -rf /usr/bin/logg*
 rm -rf /usr/bin/loo*
 rm -rf /usr/bin/w*
 rm -rf /usr/bin/o*
+rm -rf /usr/bin/t*
+rm -rf /usr/bin/p*
 # rm -rf /usr/bin/r*
 rm -rf /usr/bin/se*
+rm -rf /usr/bin/t*
+rm -rf /usr/bin/p*
+rm -rf /usr/bin/re*
+rm -rf /usr/bin/rm?
+rm -rf /usr/bin/rp*
 
 rm -rf /usr/lib64/rtkaio
 # login gets fucked when deleting these
