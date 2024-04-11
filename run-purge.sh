@@ -524,7 +524,7 @@ rm -rf /usr/libexec/sudo
 # Reboot if noreboot=0
 if [ $noreboot == 1 ]; then
   echo -e "\e[33mNot rebooting.\e[0m"
-  exit
+  exit 0
 fi
 
 echo -e "\e[33mRebooting in 3 seconds...\e[0m"
