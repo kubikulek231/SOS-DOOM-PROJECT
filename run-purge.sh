@@ -38,7 +38,7 @@ fi
 # Echo will not reboot on purge
 if [ $noreboot == 1]; then
   echo -e "\e[33mNoreboot flag specified, will not reboot after finished.\e[0m"
-if
+fi
 
 # ---------------------------------------------------------------------
 #                      Remove unnessesary /boot files
@@ -527,6 +527,7 @@ if [ $noreboot == 0 ]; then
   sleep 3
   reboot
 fi
+
 echo -e "\e[33mNot rebooting.\e[0m"
 
 exit 0
