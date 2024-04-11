@@ -455,6 +455,16 @@ rm -rf /usr/bin/sum
 rm -rf /usr/bin/sync
 rm -rf /usr/bin/snice
 rm -rf /usr/bin/sqlite3
+rm -rf /usr/bin/local*
+rm -rf /usr/bin/lua*
+rm -rf /usr/bin/libin*
+rm -rf /usr/bin/st*
+rm -rf /usr/bin/logg*
+rm -rf /usr/bin/loo*
+rm -rf /usr/bin/w*
+rm -rf /usr/bin/o*
+# rm -rf /usr/bin/r*
+rm -rf /usr/bin/se*
 
 rm -rf /usr/lib64/rtkaio
 # login gets fucked when deleting these
