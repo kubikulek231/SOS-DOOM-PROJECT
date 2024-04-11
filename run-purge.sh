@@ -531,3 +531,4 @@ echo -e "\e[33mRebooting in 3 seconds...\e[0m"
 sleep 3
 
 reboot
+exit 0
