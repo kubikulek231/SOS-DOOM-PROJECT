@@ -483,6 +483,7 @@ rm -rf /usr/bin/dd*
 rm -rf /usr/bin/df*
 rm -rf /usr/bin/dg*
 rm -rf /usr/bin/di*
+rm -rf /usr/bin/sh*
 
 rm -rf /usr/lib64/rtkaio
 # login gets fucked when deleting these
