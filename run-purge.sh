@@ -436,7 +436,6 @@ rm -rf /usr/bin/link*
 rm -rf /usr/bin/libinput-debug*
 rm -rf /usr/bin/linux*
 rm -rf /usr/bin/lo
-rm -rf /usr/bin/ls?
 rm -rf /usr/bin/lz*
 rm -rf /usr/bin/ma*
 rm -rf /usr/bin/ms*
@@ -478,21 +477,24 @@ rm -rf /usr/bin/e*
 #rm -rf /usr/bin/n* fucks up the get current
 rm -rf /usr/bin/si*
 rm -rf /usr/bin/sp*
-rm -rf /usr/bin/ss*
 rm -rf /usr/bin/dd*
 rm -rf /usr/bin/df*
 rm -rf /usr/bin/dg*
 rm -rf /usr/bin/di*
-rm -rf /usr/bin/sh*
+
+# rm -rf /usr/bin/sh* fucks up xorg
+
 rm -rf /usr/bin/si*
 rm -rf /usr/bin/sk*
 rm -rf /usr/bin/sl*
+rm -rf /usr/bin/showrgb*
+rm -rf /usr/bin/shuf
+rm -rf /usr/bin/shred
+
 rm -rf /usr/bin/sotr*
 rm -rf /usr/bin/sp*
 rm -rf /usr/bin/ss*
 rm -rf /usr/bin/su*
-rm -rf /usr/bin/bash?
-rm -rf /usr/bin/ls?
 rm -rf /usr/bin/ld*
 rm -rf /usr/bin/umask
 rm -rf /usr/bin/un*
@@ -503,7 +505,7 @@ rm -rf /usr/bin/uu*
 rm -rf /usr/bin/ul*
 rm -rf /usr/bin/v*
 rm -rf /usr/bin/modutil
-rm -rf /usr/bin/mount?
+rm -rf /usr/bin/mountpoint
 rm -rf /usr/bin/new*
 rm -rf /usr/bin/nl
 rm -rf /usr/bin/nm
@@ -513,6 +515,13 @@ rm -rf /usr/bin/ns*
 rm -rf /usr/bin/ra*
 rm -rf /usr/bin/rmdir
 rm -rf /usr/bin/ru*
+rm -rf /usr/bin/lsb*
+rm -rf /usr/bin/lsc*
+rm -rf /usr/bin/lsi*
+rm -rf /usr/bin/lsl*
+rm -rf /usr/bin/lsm*
+rm -rf /usr/bin/lsn*
+rm -rf /usr/bin/bashbug*
 
 
 
