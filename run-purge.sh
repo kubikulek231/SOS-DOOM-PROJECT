@@ -475,7 +475,7 @@ rm -rf /usr/bin/rp*
 rm -rf /usr/bin/e*
 #rm -rf /usr/bin/d*
 #rm -rf /usr/bin/u*
-rm -rf /usr/bin/n*
+#rm -rf /usr/bin/n* fucks up the get current
 rm -rf /usr/bin/si*
 rm -rf /usr/bin/sp*
 rm -rf /usr/bin/ss*
