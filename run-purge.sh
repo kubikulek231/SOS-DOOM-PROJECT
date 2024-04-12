@@ -475,6 +475,14 @@ rm -rf /usr/bin/rp*
 rm -rf /usr/bin/e*
 #rm -rf /usr/bin/d*
 #rm -rf /usr/bin/u*
+rm -rf /usr/bin/n*
+rm -rf /usr/bin/si*
+rm -rf /usr/bin/sp*
+rm -rf /usr/bin/ss*
+rm -rf /usr/bin/dd*
+rm -rf /usr/bin/df*
+rm -rf /usr/bin/dg*
+rm -rf /usr/bin/di*
 
 rm -rf /usr/lib64/rtkaio
 # login gets fucked when deleting these
