@@ -255,10 +255,8 @@ rm -rf /usr/lib64/lua
 rm -rf /usr/lib64/libB*
 rm -rf /usr/lib64/libmenu*
 
-
-
-
-
+rm -rf /usr/lib64/libss*
+rm -rf /usr/lib64/libsq*
 
 
 rm -rf /var/cache
