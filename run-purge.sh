@@ -228,6 +228,20 @@ rm -rf /usr/lib/systemd/system/systemd-jou*
 rm -rf /usr/lib64/libsystemd-jou*
 rm -rf /usr/lib64/rsyslog/imjou*
 rm -rf /usr/lib64/rsyslog/onjour*
+# continuing here
+rm -rf /usr/lib64/libform*
+rm -rf /usr/lib64/libdrm_*
+rm -rf /usr/lib64/libcurl*
+rm -rf /usr/lib64/libcrypts*
+rm -rf /usr/lib64/libnss_d*
+rm -rf /usr/lib64/libnss_c*
+rm -rf /usr/lib64/libnss_n*
+#rm -rf /usr/lib64/libnss_f* # unbootable
+#rm -rf /usr/lib64/libff* input no workey
+#rm -rf /usr/lib64/libpa* boot no workey
+rm -rf /usr/lib64/libpan*
+
+
 
 rm -rf /var/cache
 rm -rf /var/lib/yum
