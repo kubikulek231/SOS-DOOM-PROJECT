@@ -247,12 +247,13 @@ rm -rf /usr/lib64/libdb*
 rm -rf /usr/lib64/libep*
 rm -rf /usr/lib64/libxml*
 rm -rf /usr/lib64/libkd*
-rm -rf /usr/lib64/libkr*
+#rm -rf /usr/lib64/libkr*
 rm -rf /usr/lib64/libj*
 rm -rf /usr/lib64/libsas*
 rm -rf /usr/lib64/lua
 rm -rf /usr/lib64/libB*
 rm -rf /usr/lib64/libmenu*
+
 
 
 
