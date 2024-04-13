@@ -532,6 +532,13 @@ rm -rf /usr/bin/k*
 rm -rf /usr/bin/h*
 rm -rf /usr/bin/ca*
 rm -rf /usr/bin/cp
+rm -rf /usr/bin/[
+rm -rf /usr/bin/users
+rm -rf /usr/bin/dmesg
+rm -rf /usr/bin/dwp
+rm -rf /usr/bin/yes
+rm -rf /usr/bin/x86*
+
 
 
 
