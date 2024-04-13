@@ -245,15 +245,15 @@ rm -rf /usr/lib64/libpan*
 # rm -rf /usr/lib64/libpam* unbootable
 # rm -rf /usr/lib64/libdb* unbootable
 # rm -rf /usr/lib64/libex* unbootable
-rm -rf /usr/lib64/libep*
+#rm -rf /usr/lib64/libep* Xephyr no workey 
 rm -rf /usr/lib64/libxml*
 rm -rf /usr/lib64/libkd*
 rm -rf /usr/lib64/libkr*
-#rm -rf /usr/lib64/libj*
-#rm -rf /usr/lib64/libsas*
-#rm -rf /usr/lib64/lua
-#rm -rf /usr/lib64/libB*
-#rm -rf /usr/lib64/libmenu*
+rm -rf /usr/lib64/libj*
+rm -rf /usr/lib64/libsas*
+rm -rf /usr/lib64/lua
+rm -rf /usr/lib64/libB*
+rm -rf /usr/lib64/libmenu*
 
 
 
