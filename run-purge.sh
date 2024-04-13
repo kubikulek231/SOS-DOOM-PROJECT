@@ -268,7 +268,7 @@ rm -rf /usr/lib64/libh*
 # rm -rf /usr/lib64/libI* fcs up x
 # rm -rf /usr/lib64/libS* same ^
 rm -rf /usr/lib64/libcra*
-rm -rf /usr/lib64/libcrypto*
+# rm -rf /usr/lib64/libcrypto* fucks up x
 rm -rf /usr/lib64/libco*
 # rm -rf /usr/lib64/libac* unbootable
 rm -rf /usr/lib64/liban*
