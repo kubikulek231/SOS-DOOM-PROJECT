@@ -274,16 +274,16 @@ rm -rf /usr/lib64/libco*
 rm -rf /usr/lib64/liban*
 rm -rf /usr/lib64/libass*
 # rm -rf /usr/lib64/libatt* unrebootable (:
-rm -rf /usr/lib64/libau*
+#rm -rf /usr/lib64/libau*
 # rm -rf /usr/lib64/libnsl* login fd
-rm -rf /usr/lib64/libpo*
-rm -rf /usr/lib64/libpr*
+#rm -rf /usr/lib64/libpo*
+#rm -rf /usr/lib64/libpr*
 # rm -rf /usr/lib64/libpt* nogo
 # rm -rf /usr/lib64/libca* nogo
-rm -rf /usr/lib64/libpcre1*
-rm -rf /usr/lib64/libpcre3*
-rm -rf /usr/lib64/libpcrec*
-rm -rf /usr/lib64/libcrepo*
+#rm -rf /usr/lib64/libpcre1*
+#rm -rf /usr/lib64/libpcre3*
+#rm -rf /usr/lib64/libpcrec*
+#rm -rf /usr/lib64/libcrepo*
 # rm -rf /usr/lib64/libpl*
 # rm -rf /usr/lib64/libcap-* nogo
 
