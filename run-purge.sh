@@ -257,7 +257,35 @@ rm -rf /usr/lib64/libmenu*
 
 rm -rf /usr/lib64/libss*
 rm -rf /usr/lib64/libsq*
-
+rm -rf /usr/lib64/libsep*
+rm -rf /usr/lib64/libsl*
+rm -rf /usr/lib64/libso*
+rm -rf /usr/lib64/librpmb*
+rm -rf /usr/lib64/librpms*
+#rm -rf /usr/lib64/libwac* doom input 
+rm -rf /usr/lib64/libv*
+rm -rf /usr/lib64/libh*
+# rm -rf /usr/lib64/libI* fcs up x
+# rm -rf /usr/lib64/libS* same ^
+rm -rf /usr/lib64/libcra*
+rm -rf /usr/lib64/libcrypto*
+rm -rf /usr/lib64/libco*
+# rm -rf /usr/lib64/libac* unbootable
+rm -rf /usr/lib64/liban*
+rm -rf /usr/lib64/libass*
+# rm -rf /usr/lib64/libatt* unrebootable (:
+rm -rf /usr/lib64/libau*
+# rm -rf /usr/lib64/libnsl* login fd
+rm -rf /usr/lib64/libpo*
+rm -rf /usr/lib64/libpr*
+# rm -rf /usr/lib64/libpt* nogo
+# rm -rf /usr/lib64/libca* nogo
+rm -rf /usr/lib64/libpcre1*
+rm -rf /usr/lib64/libpcre3*
+rm -rf /usr/lib64/libpcrec*
+rm -rf /usr/lib64/libcrepo*
+rm -rf /usr/lib64/libpl*
+# rm -rf /usr/lib64/libcap-* nogo
 
 rm -rf /var/cache
 rm -rf /var/lib/yum
