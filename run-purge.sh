@@ -237,7 +237,7 @@ rm -rf /usr/lib64/libnss_d*
 rm -rf /usr/lib64/libnss_c*
 rm -rf /usr/lib64/libnss_n*
 rm -rf /usr/lib64/libnss_m*
-rm -rf /usr/lib64/libnss_h*
+#rm -rf /usr/lib64/libnss_h*
 #rm -rf /usr/lib64/libnss_f* # unbootable
 #rm -rf /usr/lib64/libff* input no workey
 #rm -rf /usr/lib64/libpa* boot no workey
