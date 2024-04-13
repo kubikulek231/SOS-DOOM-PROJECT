@@ -347,7 +347,10 @@ rm -rf /usr/lib64/libuser*
 rm -rf /usr/lib64/libutil*
 rm -rf /usr/lib64/libway*
 # rm -rf /usr/lib64/libz* no booterino
-
+rm -rf /usr/lib64/pm*
+# rm -rf /usr/lib64/se* login issues
+rm -rf /usr/lib64/sas*
+rm -rf /usr/lib64/sse*
 
 
 
