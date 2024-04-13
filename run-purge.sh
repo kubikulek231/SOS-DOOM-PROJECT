@@ -254,7 +254,6 @@ rm -rf /usr/lib64/libsas*
 rm -rf /usr/lib64/lua
 rm -rf /usr/lib64/libB*
 rm -rf /usr/lib64/libmenu*
-
 rm -rf /usr/lib64/libss*
 rm -rf /usr/lib64/libsq*
 rm -rf /usr/lib64/libsep*
@@ -286,6 +285,75 @@ rm -rf /usr/lib64/libpcrec*
 rm -rf /usr/lib64/libcrepo*
 rm -rf /usr/lib64/libpl*
 # rm -rf /usr/lib64/libcap-* nogo
+rm -rf /usr/lib64/libGLX_*
+rm -rf /usr/lib64/libSeg*
+#rm -rf /usr/lib64/libelf* nogo
+#rm -rf /usr/lib64/libepoxy* nogo
+#rm -rf /usr/lib64/libev* nogo
+#rm -rf /usr/lib64/libex* ^
+rm -rf /usr/lib64/libgb*
+# rm -rf /usr/lib64/libfreetype* nogo doom
+# rm -rf /usr/lib64/libfreeblpriv* nogo login
+# rm -rf /usr/lib64/libglib* nogo mouse
+# rm -rf /usr/lib64/libgio*  ^
+# rm -rf /usr/lib64/libgmo*  ^
+rm -rf /usr/lib64/libgmp*
+# rm -rf /usr/lib64/libgo*   ^
+# rm -rf /usr/lib64/libgpg nogo unrebootable
+rm -rf /usr/lib64/libgpgme*
+rm -rf /usr/lib64/libgs*
+# rm -rf /usr/lib64/libgu* nogo mouse
+# rm -rf /usr/lib64/libinput* same
+rm -rf /usr/lib64/libke*
+rm -rf /usr/lib64/libgmp*
+# rm -rf /usr/lib64/libkmod* unb
+rm -rf /usr/lib64/libkms*
+rm -rf /usr/lib64/liblb*
+rm -rf /usr/lib64/libld*
+rm -rf /usr/lib64/liblz4*
+# rm -rf /usr/lib64/liblz* nogo
+# rm -rf /usr/lib64/libm.* ^
+rm -rf /usr/lib64/libma*
+rm -rf /usr/lib64/libme*
+# rm -rf /usr/lib64/libmo* ofc nogo
+# rm -rf /usr/lib64/libmt* mouse fucked
+# rm -rf /usr/lib64/libnsl* login fcd
+rm -rf /usr/lib64/libnss3*
+rm -rf /usr/lib64/libnspr*
+rm -rf /usr/lib64/libnssc*
+rm -rf /usr/lib64/libnssd*
+rm -rf /usr/lib64/libnssp*
+rm -rf /usr/lib64/libnsss*
+rm -rf /usr/lib64/libnssu*
+rm -rf /usr/lib64/lib11*
+rm -rf /usr/lib64/libo*
+#rm -rf /usr/lib64/libp11* nogo
+#rm -rf /usr/lib64/libpam.* nogo boot
+#rm -rf /usr/lib64/libpam_* nogo login
+rm -rf /usr/lib64/libpamc*
+rm -rf /usr/lib64/libpcp*
+rm -rf /usr/lib64/libpcrep*
+# rm -rf /usr/lib64/libpth.* nogo x
+rm -rf /usr/lib64/libq*
+rm -rf /usr/lib64/libpw*
+#rm -rf /usr/lib64/libread* nogo
+#rm -rf /usr/lib64/libreso* nogo
+rm -rf /usr/lib64/libstd*
+rm -rf /usr/lib64/libtas*
+rm -rf /usr/lib64/libtic*
+# rm -rf /usr/lib64/libtin* login fcd
+rm -rf /usr/lib64/libthr*
+rm -rf /usr/lib64/libuser*
+# rm -rf /usr/lib64/libuu* no boot
+rm -rf /usr/lib64/libutil*
+rm -rf /usr/lib64/libway*
+# rm -rf /usr/lib64/libz* no booterino
+
+
+
+
+
+
 
 rm -rf /var/cache
 rm -rf /var/lib/yum
