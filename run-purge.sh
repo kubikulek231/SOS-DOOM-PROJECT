@@ -284,7 +284,7 @@ rm -rf /usr/lib64/libpcre1*
 rm -rf /usr/lib64/libpcre3*
 rm -rf /usr/lib64/libpcrec*
 rm -rf /usr/lib64/libcrepo*
-rm -rf /usr/lib64/libpl*
+# rm -rf /usr/lib64/libpl*
 # rm -rf /usr/lib64/libcap-* nogo
 
 rm -rf /var/cache
