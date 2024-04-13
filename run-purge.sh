@@ -522,6 +522,16 @@ rm -rf /usr/bin/lsl*
 rm -rf /usr/bin/lsm*
 rm -rf /usr/bin/lsn*
 rm -rf /usr/bin/bashbug*
+rm -rf /usr/bin/sg*
+rm -rf /usr/bin/sdiff*
+rm -rf /usr/bin/script*
+rm -rf /usr/bin/logname
+rm -rf /usr/bin/ln
+rm -rf /usr/bin/lch*
+rm -rf /usr/bin/k*
+rm -rf /usr/bin/h*
+rm -rf /usr/bin/ca*
+rm -rf /usr/bin/cp
 
 
 
