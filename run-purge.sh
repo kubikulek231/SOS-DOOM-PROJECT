@@ -310,7 +310,6 @@ rm -rf /usr/lib64/libgmp*
 rm -rf /usr/lib64/libkms*
 rm -rf /usr/lib64/liblb*
 rm -rf /usr/lib64/libld*
-rm -rf /usr/lib64/liblz4*
 # rm -rf /usr/lib64/liblz* nogo
 # rm -rf /usr/lib64/libm.* ^
 rm -rf /usr/lib64/libma*
