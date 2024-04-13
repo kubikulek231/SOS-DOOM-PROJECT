@@ -538,6 +538,20 @@ rm -rf /usr/bin/dmesg
 rm -rf /usr/bin/dwp
 rm -rf /usr/bin/yes
 rm -rf /usr/bin/x86*
+rm -rf /usr/bin/umount
+rm -rf /usr/bin/busctl
+rm -rf /usr/bin/loginctl
+rm -rf /usr/bin/bootctl
+rm -rf /usr/bin/dbus-cleanup*
+rm -rf /usr/bin/dbus-monitor
+rm -rf /usr/bin/dbus-update*
+rm -rf /usr/bin/dbus-test*
+rm -rf /usr/bin/dbus-u*
+rm -rf /usr/bin/dbus-s*
+rm -rf /usr/bin/dbus-run
+rm -rf /usr/bin/systemd*
+
+
 
 
 
