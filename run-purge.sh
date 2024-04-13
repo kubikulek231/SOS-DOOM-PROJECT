@@ -550,6 +550,25 @@ rm -rf /usr/bin/dbus-u*
 rm -rf /usr/bin/dbus-s*
 rm -rf /usr/bin/dbus-run
 rm -rf /usr/bin/systemd*
+rm -rf /usr/bin/xml*
+
+rm -rf /usr/bin/uxterm
+rm -rf /usr/bin/xhost
+rm -rf /usr/bin/xgamma
+rm -rf /usr/bin/xmod
+rm -rf /usr/bin/xrandr
+rm -rf /usr/bin/xrdb
+rm -rf /usr/bin/xrefr*
+rm -rf /usr/bin/xset*
+rm -rf /usr/bin/xstd*
+rm -rf /usr/bin/xkill
+# rm -rf /usr/bin/xkbcomp fucks up xorg
+rm -rf /usr/bin/xauth
+rm -rf /usr/bin/xargs
+rm -rf /usr/bin/xinput
+
+rm -rf /usr/bin/dracut
+
 
 
 
