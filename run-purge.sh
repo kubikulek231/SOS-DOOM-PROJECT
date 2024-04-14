@@ -365,9 +365,7 @@ rm -rf /usr/lib64/libxcb-comp*
 rm -rf /usr/lib64/libxcb-d*
 rm -rf /usr/lib64/libxcb-res*
 
-
-
-rm -rf /usr/share/X11/locale/
+# rm -rf /usr/share/X11/locale/
 rm -rf /usr/local/share/man/
 # rm -rf /usr/share/X11/xkb/symbols/a* no workey
 rm -rf /usr/share/X11/xkb/symbols/b*
@@ -387,8 +385,6 @@ rm -rf /usr/share/X11/xkb/symbols/o*
 rm -rf /usr/share/X11/xkb/symbols/r*
 rm -rf /usr/share/X11/xkb/symbols/t*
 # rm -rf /usr/share/X11/xkb/symbols/u*
-
-
 
 rm -rf /var/cache
 rm -rf /var/lib/yum
