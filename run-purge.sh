@@ -363,6 +363,7 @@ rm -rf /usr/lib64/libxcb-screens*
 rm -rf /usr/lib64/libxcb-sync*
 rm -rf /usr/lib64/libxcb-comp*
 rm -rf /usr/lib64/libxcb-d*
+rm -rf /usr/lib64/libxcb-res*
 
 
 
