@@ -11,13 +11,13 @@
 echo "Executing .rundoom"
 
 # Wait for X to start
-sleep 1
+sleep 2
 
 # Run Xephyr in an xterm window
 Xephyr -ac -screen 320x200x8 -origin 200x200 -br -noreset :1 &
 
 # Wait for Xephyr to start
-sleep 1
+sleep 3
 
 # Run DOOM in another xterm window
 cd /root/DOOM && DISPLAY=:1 ./linuxxdoom &
