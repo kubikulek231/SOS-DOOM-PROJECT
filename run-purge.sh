@@ -838,9 +838,9 @@ rm -rf /usr/sbin/c*
 
 rm -rf /usr/libexec/getconf*
 rm -rf /usr/libexec/awk*
-#rm -rf /usr/libexec/selinux* fcs up doom
+rm -rf /usr/libexec/selinux* fcs up doom
 rm -rf /usr/libexec/sudo*
-rm -rf /usr/libexec/initsc*
+#rm -rf /usr/libexec/initsc*
 
 rm -rf /root/run-se*
 rm -rf /root/run-pur*
