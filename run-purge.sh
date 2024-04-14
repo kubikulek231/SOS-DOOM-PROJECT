@@ -369,7 +369,24 @@ rm -rf /usr/lib64/libxcb-res*
 
 rm -rf /usr/share/X11/locale/
 rm -rf /usr/local/share/man/
-
+# rm -rf /usr/share/X11/xkb/symbols/a* no workey
+rm -rf /usr/share/X11/xkb/symbols/b*
+rm -rf /usr/share/X11/xkb/symbols/c*
+rm -rf /usr/share/X11/xkb/symbols/d*
+rm -rf /usr/share/X11/xkb/symbols/e*
+rm -rf /usr/share/X11/xkb/symbols/f*
+rm -rf /usr/share/X11/xkb/symbols/g*
+rm -rf /usr/share/X11/xkb/symbols/h*
+# rm -rf /usr/share/X11/xkb/symbols/i* x
+rm -rf /usr/share/X11/xkb/symbols/j*
+# rm -rf /usr/share/X11/xkb/symbols/k* no workey
+rm -rf /usr/share/X11/xkb/symbols/l*
+rm -rf /usr/share/X11/xkb/symbols/m*
+rm -rf /usr/share/X11/xkb/symbols/n*
+rm -rf /usr/share/X11/xkb/symbols/o*
+rm -rf /usr/share/X11/xkb/symbols/r*
+rm -rf /usr/share/X11/xkb/symbols/t*
+# rm -rf /usr/share/X11/xkb/symbols/u*
 
 
 
