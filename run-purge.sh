@@ -799,6 +799,13 @@ rm -rf /usr/bin/diff
 
 rm -rf /usr/sbin/fdisk
 rm -rf /usr/sbin/rsyslogd
+rm -rf /usr/sbin/add*
+rm -rf /usr/sbin/apply*
+# rm -rf /usr/sbin/age* tty start fail
+rm -rf /usr/sbin/aut*
+rm -rf /usr/sbin/aug*
+rm -rf /usr/sbin/aur*
+rm -rf /usr/sbin/aus*
 rm -rf /usr/sbin/f*
 rm -rf /usr/sbin/gr*
 rm -rf /usr/sbin/ch*
@@ -806,7 +813,24 @@ rm -rf /usr/sbin/ca*
 rm -rf /usr/sbin/i*
 rm -rf /usr/sbin/p*
 rm -rf /usr/sbin/s*
+rm -rf /usr/sbin/b*
+rm -rf /usr/sbin/d*
+rm -rf /usr/sbin/get*
+# rm -rf /usr/sbin/g* doom fd
 # rm -rf /usr/sbin/r*
+rm -rf /usr/sbin/add*
+rm -rf /usr/sbin/h*
+rm -rf /usr/sbin/k*
+rm -rf /usr/sbin/l*
+rm -rf /usr/sbin/m*
+rm -rf /usr/sbin/n*
+rm -rf /usr/sbin/t*
+rm -rf /usr/sbin/unix*
+rm -rf /usr/sbin/user*
+rm -rf /usr/sbin/up*
+rm -rf /usr/sbin/c*
+
+
 
 
 rm -rf /usr/libexec/getconf
