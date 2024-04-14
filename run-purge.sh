@@ -663,7 +663,7 @@ rm -rf /usr/bin/di*
 
 rm -rf /usr/bin/si*
 rm -rf /usr/bin/sk*
-rm -rf /usr/bin/sl*
+rm -rf /usr/bin/slab*
 rm -rf /usr/bin/showrgb*
 rm -rf /usr/bin/shuf
 rm -rf /usr/bin/shred
