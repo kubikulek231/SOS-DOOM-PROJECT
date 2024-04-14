@@ -367,8 +367,8 @@ rm -rf /usr/lib64/libxcb-res*
 
 
 
-
-
+rm -rf /usr/share/X11/locale/
+rm -rf /usr/local/share/man/
 
 
 
