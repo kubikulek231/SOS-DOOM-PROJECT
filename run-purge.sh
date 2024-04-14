@@ -50,6 +50,8 @@ rm -f /boot/initramfs-0*
 rm -f /boot/symvers*
 rm -f /boot/*kdump.img
 rm -rf /boot/grub
+rm -rf /boot/grub2/fonts
+rm -rf /boot/grub2/l*
 rm -f /boot/System.map-*
 rm -f /boot/efi
 
@@ -253,6 +255,7 @@ rm -rf /usr/lib64/libj*
 rm -rf /usr/lib64/libsas*
 rm -rf /usr/lib64/lua
 rm -rf /usr/lib64/libB*
+# rm -rf /usr/lib64/libb* fails to boot
 rm -rf /usr/lib64/libmenu*
 rm -rf /usr/lib64/libss*
 rm -rf /usr/lib64/libsq*
@@ -740,13 +743,7 @@ rm -rf /usr/bin/xkill
 rm -rf /usr/bin/xauth
 rm -rf /usr/bin/xargs
 rm -rf /usr/bin/xinput
-
 rm -rf /usr/bin/dracut
-
-
-
-
-
 
 
 rm -rf /usr/lib64/rtkaio
@@ -791,6 +788,15 @@ rm -rf /usr/lib64/libsemanage*
 rm -rf /usr/lib64/libsystemd-jou*
 rm -rf /usr/lib64/rsyslog
 
+rm -rf /usr/lib64/xorg/modules/shadow*
+rm -rf /usr/lib64/xorg/modules/ext*
+rm -rf /usr/lib64/xorg/modules/libw*
+# rm -rf /usr/lib64/xorg/modules/libf* nogo
+rm -rf /usr/lib64/xorg/modules/libfbd*
+rm -rf /usr/lib64/xorg/modules/libi*
+rm -rf /usr/lib64/xorg/modules/libg*
+rm -rf /usr/lib64/xorg/modules/libv*
+
 rm -rf /usr/bin/trust
 rm -rf /usr/bin/certutil
 rm -rf /usr/bin/oldfind
@@ -833,10 +839,11 @@ rm -rf /usr/sbin/c*
 
 
 
-rm -rf /usr/libexec/getconf
-rm -rf /usr/libexec/awk
-rm -rf /usr/libexec/selinux
-rm -rf /usr/libexec/sudo
+rm -rf /usr/libexec/getconf*
+rm -rf /usr/libexec/awk*
+rm -rf /usr/libexec/selinux*
+rm -rf /usr/libexec/sudo*
+rm -rf /usr/libexec/initsc*
 
 # Reboot if noreboot=0
 if [ $noreboot == 0 ]; then
