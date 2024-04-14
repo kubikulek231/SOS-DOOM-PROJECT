@@ -551,7 +551,7 @@ rm -rf /usr/lib/systemd/systemd-update*
 rm -rf /usr/lib/systemd/systemd-vc*
 rm -rf /usr/lib/systemd/systemd-rand*
 rm -rf /usr/lib/systemd/systemd-socket*
-rm -rf /usr/lib/systemd/systemd-sleep
+#rm -rf /usr/lib/systemd/systemd-sleep
 rm -rf /usr/lib/systemd/catalog
 rm -rf /usr/lib/systemd/system/systemd-update*
 rm -rf /usr/lib/systemd/system/rescue*
@@ -562,7 +562,7 @@ rm -rf /usr/lib/systemd/system/systemd-time*
 rm -rf /usr/lib/systemd/system/network*
 rm -rf /usr/lib/systemd/system/bluetooth*
 rm -rf /usr/lib/systemd/system/container*
-rm -rf /usr/lib/systemd/system/sleep*
+#rm -rf /usr/lib/systemd/system/sleep*
 rm -rf /usr/lib/systemd/system/sound*
 rm -rf /usr/lib/systemd/system/suspend*
 rm -rf /usr/lib/systemd/system/systemd-journ*
