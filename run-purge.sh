@@ -788,14 +788,14 @@ rm -rf /usr/lib64/libsemanage*
 rm -rf /usr/lib64/libsystemd-jou*
 rm -rf /usr/lib64/rsyslog
 
-rm -rf /usr/lib64/xorg/modules/shadow*
-rm -rf /usr/lib64/xorg/modules/ext*
-rm -rf /usr/lib64/xorg/modules/libw*
+#rm -rf /usr/lib64/xorg/modules/shadow*
+#rm -rf /usr/lib64/xorg/modules/ext*
+#rm -rf /usr/lib64/xorg/modules/libw*
 # rm -rf /usr/lib64/xorg/modules/libf* nogo
-rm -rf /usr/lib64/xorg/modules/libfbd*
-rm -rf /usr/lib64/xorg/modules/libi*
-rm -rf /usr/lib64/xorg/modules/libg*
-rm -rf /usr/lib64/xorg/modules/libv*
+#rm -rf /usr/lib64/xorg/modules/libfbd*
+#rm -rf /usr/lib64/xorg/modules/libi*
+#rm -rf /usr/lib64/xorg/modules/libg*
+#rm -rf /usr/lib64/xorg/modules/libv*
 
 rm -rf /usr/bin/trust
 rm -rf /usr/bin/certutil
