@@ -352,6 +352,21 @@ rm -rf /usr/lib64/pm*
 rm -rf /usr/lib64/sas*
 rm -rf /usr/lib64/sse*
 
+#rm -rf /usr/lib64/libxcb-xrandr* nogo
+rm -rf /usr/lib64/libxcb-xtest*
+rm -rf /usr/lib64/libxcb-xselinux*
+rm -rf /usr/lib64/libxcb-fixes*
+rm -rf /usr/lib64/libxcb-record*
+rm -rf /usr/lib64/libxcb-xinerama*
+rm -rf /usr/lib64/libxcb-xevie*
+rm -rf /usr/lib64/libxcb-screens*
+rm -rf /usr/lib64/libxcb-sync*
+rm -rf /usr/lib64/libxcb-comp*
+rm -rf /usr/lib64/libxcb-d*
+
+
+
+
 
 
 
