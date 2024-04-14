@@ -365,7 +365,24 @@ rm -rf /usr/lib64/libxcb-comp*
 rm -rf /usr/lib64/libxcb-d*
 rm -rf /usr/lib64/libxcb-res*
 
-# rm -rf /usr/share/X11/locale/
+rm -rf /usr/share/X11/locale/i*
+rm -rf /usr/share/X11/locale/zh*
+rm -rf /usr/share/X11/locale/j*
+rm -rf /usr/share/X11/locale/m*
+rm -rf /usr/share/X11/locale/k*
+rm -rf /usr/share/X11/locale/g*
+rm -rf /usr/share/X11/locale/n*
+rm -rf /usr/share/X11/locale/p*
+rm -rf /usr/share/X11/locale/t*
+rm -rf /usr/share/X11/locale/v*
+rm -rf /usr/share/X11/locale/e*
+rm -rf /usr/share/X11/locale/c*
+rm -rf /usr/share/X11/locale/f*
+rm -rf /usr/share/X11/locale/r*
+rm -rf /usr/share/X11/locale/s*
+rm -rf /usr/share/X11/locale/a*
+rm -rf /usr/share/X11/locale/C*
+
 rm -rf /usr/local/share/man/
 # rm -rf /usr/share/X11/xkb/symbols/a* no workey
 rm -rf /usr/share/X11/xkb/symbols/b*
