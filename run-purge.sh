@@ -378,8 +378,8 @@ rm -rf /usr/share/X11/locale/n*
 rm -rf /usr/share/X11/locale/p*
 rm -rf /usr/share/X11/locale/t*
 rm -rf /usr/share/X11/locale/v*
-rm -rf /usr/share/X11/locale/e*
-rm -rf /usr/share/X11/locale/c*
+#rm -rf /usr/share/X11/locale/e*
+#rm -rf /usr/share/X11/locale/c*
 rm -rf /usr/share/X11/locale/f*
 rm -rf /usr/share/X11/locale/r*
 rm -rf /usr/share/X11/locale/s*
