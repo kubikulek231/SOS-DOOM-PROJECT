@@ -1,7 +1,7 @@
 #!/bin/bash
 # ---------------------------------------------------------------------
-# Bash script for setting up the DOOM compiled game and scripts needed
-# to minimalize the OS size
+# Bash script for downloading and setting up the DOOM compiled game 
+# and scripts needed to minimalize the OS size
 # Written as part of an assignent during the BPC-SOS course at FEEC BUT
 # Authors: Jakub Lepik, Martin Moncek, Matej Baranyk
 #
