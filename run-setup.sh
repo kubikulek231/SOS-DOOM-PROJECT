@@ -1,8 +1,8 @@
 #!/bin/bash
 # ---------------------------------------------------------------------
 # Bash script for downloading and setting up the DOOM compiled game 
-# and scripts needed to minimalize the OS size
-# Written as part of an assignent during the BPC-SOS course at FEEC BUT
+# and scripts needed to minimize the OS size
+# Written as part of an assignment during the BPC-SOS course at FEEC BUT
 # Authors: Jakub Lepik, Martin Moncek, Matej Baranyk
 #
 # This script is released under the GNU General Public License v3.0.
