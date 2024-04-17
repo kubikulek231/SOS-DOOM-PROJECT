@@ -211,7 +211,7 @@ chmod +x /etc/rc.local
 systemctl daemon-reload
 
 if [[ $safepurge == 1 ]]; then
-  echo -e "\e[33mSafe mode, exiting! :)\e[0m"
+  echo -e "\e[33mSafe part finished, exiting! :)\e[0m"
   exit
 fi
 
