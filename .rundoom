@@ -1,7 +1,7 @@
 #!/bin/bash
 # ---------------------------------------------------------------------
 # Bash script for running DOOM in Xephyr
-# Written as part of an assignent during the BPC-SOS course at FEEC BUT
+# Written as part of an assignment during the BPC-SOS course at FEEC BUT
 # Authors: Jakub Lepik, Martin Moncek, Matej Baranyk
 #
 # This script is released under the GNU General Public License v3.0.
