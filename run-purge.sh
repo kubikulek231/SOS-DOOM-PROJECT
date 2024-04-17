@@ -1,6 +1,6 @@
 #!/bin/bash
 # ---------------------------------------------------------------------
-# Bash script for removing unnessesary files
+# Bash script for removing unnecessary files
 # Written as part of an assignment during the BPC-SOS course at FEEC BUT
 # Authors: Jakub Lepik, Martin Moncek, Matej Baranyk
 #
