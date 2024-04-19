@@ -16,41 +16,31 @@ Done as a part of an assignment during the BPC-SOS course at FEEC BUT.
 
 > A screenshot taken while running the X window with the game on the shrunk OS. In the bottom part, the Xterm terminal emulator can be used even while the game is running, for example, to exit the whole graphic environment.
 
+---
+
 ### The Scripts ###
 
-```bash
-run-setup.sh
-```
+#### [run-setup.sh](/run-setup.sh) ####
 
-When placed in /root/, the script downloads this repository and runs the newer version of the script (e.g. updates itself). It then sets up the DOOM game, its dependencies, and other scripts from this repository. If the -a or --autopurge parameter is specified, it runs the run-purge.sh script when finished.
+When placed in /root/, the script downloads this repository and runs the newer version of the script (e.g. updates itself). It then sets up the DOOM game, its dependencies, and other scripts from this repository. If the -a or --autopurge parameter is specified, it runs the run-purge.sh script when finished.<br>
 
-```bash
-run-purge.sh
-```
+#### [run-purge.sh](/run-purge.sh) ####
 
-Purges, i.e., removes everything redundant for running the OS and the game and reboots it (in case -n or --noreboot is NOT specified). It can be run automatically by run-setup.sh or executed separately. Also accepts -s or --safemode as a parameter, which will run the script in safe mode.
+Purges, i.e., removes everything redundant for running the OS and the game and reboots it (in case -n or --noreboot is NOT specified). It can be run automatically by run-setup.sh or executed separately. Also accepts -s or --safemode as a parameter, which will run the script in safe mode. <br>
 
-```bash
-run-doom.sh
-```
+#### [run-doom.sh](/run-doom.sh) ####
 
-Essentially a wrapper for the xinit command.
+Essentially a wrapper for the xinit command. Used by the user to start the X server along with Xterm and the DOOM game in Xephyr. <br>
 
-```bash
-.xinitrc
-```
+#### [.xinitrc](/.xinitrc) ####
 
-A script that modifies the xinit command behavior: runs the Xterm terminal emulator with a custom size on the X server start and executes .run-doom script right after it.
+A script that modifies the xinit command behavior: runs the Xterm terminal emulator with a custom size on the X server start and executes .run-doom script right after it. <br>
 
-```bash
-get-current-os-size.sh
-```
+#### [get-current-os-size.sh](/get-current-os-size.sh) ####
 
-For debugging purposes, it retrieves the current size of the whole OS, excluding some directories. It retrieves the size in MiB and sorts the files by size.
+For debugging purposes, it retrieves the current size of the whole OS, excluding some directories. It retrieves the size in MiB and sorts the files by size. <br>
 
-```bash
-get-yum-packages.sh
-```
+#### [get-yum-packages.sh](/get-yum-packages.sh) ####
 
-For debugging purposes, it lists every yum package installed by size and saves the output to packages.txt.
+For debugging purposes, it lists every yum package installed by size and saves the output to packages.txt. <br>
 
