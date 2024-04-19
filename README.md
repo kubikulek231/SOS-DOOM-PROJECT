@@ -18,23 +18,39 @@ Part of an assignment during the BPC-SOS course at FEEC BUT.
 
 ### The Scripts ###
 
-***run-setup.sh***
-> When put into /root/, it downloads this repo and updates itself. It sets up the DOOM game, its dependencies, and other scripts from here. If the -a or --autopurge parameter is specified, it runs the run-purge.sh script when finished.
+```bash
+run-setup.sh
+```
 
-***run-purge.sh***
-> Purges eg. removes everything redundant for running the OS and the game and reboots it (in case -n is not specified). It can be run automatically by run-setup.sh or executed separately. Also accepts -s as a parameter, which will run the script in safe mode.
+When placed in /root/, this script downloads the repository and updates itself. It then sets up the DOOM game, its dependencies, and other scripts from this repository. If the -a or—-autopurge parameter is specified, it runs the run-purge.sh script when finished.
 
-***run-doom.sh***
-> Essentially a wrapper for xinit command.
+```bash
+run-purge.sh
+```
 
-***.run-doom***
-> Script that runs the DOOM game in Xephyr on the X server.
+Purges, i.e., removes everything redundant for running the OS and the game, and reboots it (in case -n is not specified). It can be run automatically by run-setup.sh or executed separately. Also accepts -s as a parameter, which will run the script in safe mode.
 
-***.xinitrc***
-> Script that modifies the xinit command behavior to run Xterm terminal emulator with custom size on x server start and execute the .run-doom script.
+```bash
+run-doom.sh
+```
 
-***get-current-os-size.sh***
-> For debugging purposes: gets the current size of the whole OS, excluding some directories. It retrieves the size in MiB and sorts the files by size.
+Essentially a wrapper for the xinit command.
 
-***get-yum-packages.sh***
-> For debugging purposes: lists every yum package installed by size and saves the output to packages.txt.
+```bash
+.xinitrc
+```
+
+A script that modifies the xinit command behavior: runs the Xterm terminal emulator with a custom size on the X server start and executes .run-doom script right after it.
+
+```bash
+get-current-os-size.sh
+```
+
+For debugging purposes, it retrieves the current size of the whole OS, excluding some directories. It retrieves the size in MiB and sorts the files by size.
+
+```bash
+get-yum-packages.sh
+```
+
+For debugging purposes, it lists every yum package installed by size and saves the output to packages.txt.
+
