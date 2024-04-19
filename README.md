@@ -16,7 +16,7 @@ Part of an assignment during the BPC-SOS course at FEEC BUT.
 
 > A screenshot taken while running the X window with the game on the shrunk OS. In the bottom part, there is the Xterm terminal emulator, which can be used even while the game is running, for example, for exiting the whole graphic environment.
 
-### Scripts description ###
+### The Scripts ###
 
 ***run-setup.sh***
 > When put into /root/, it downloads this repo and updates itself. It sets up the DOOM game, its dependencies, and other scripts from here. If the -a or --autopurge parameter is specified, it runs the run-purge.sh script when finished.
