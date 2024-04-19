@@ -14,7 +14,7 @@ Part of an assignment in the BPC-SOS course at FEEC BUT.
 > When put into /root/, it downloads this repo and updates itself. It sets up the DOOM game, its dependencies, and other scripts from here. If the -a or --autopurge parameter is specified, it runs the run-purge.sh script when finished.
 
 ***run-purge.sh***
-> Purges (removes anything redundant) the whole system and reboots it (in case -n is not specified). It can be run automatically by run-setup.sh or executed separately. Also accepts -s as a parameter, which will run the script in safe mode.
+> Purges eg. removes everything redundant for running the OS and the game and reboots it (in case -n is not specified). It can be run automatically by run-setup.sh or executed separately. Also accepts -s as a parameter, which will run the script in safe mode.
 
 ***run-doom.sh***
 > Essentially a wrapper for xinit.
