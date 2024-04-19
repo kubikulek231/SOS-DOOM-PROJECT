@@ -4,11 +4,11 @@
   <img src="doom-logo-ds.png" alt="DOOM game logo" style="width: 50%;" />
 </p>
 
-This repository contains setup, purge, and additional scripts along a slightly modified and compiled version of [original DOOM game](https://github.com/id-Software/DOOM). Our modified source code is available [here](https://github.com/kubikulek231/SOS-DOOM-SOURCE).
-Using minimal version of CentOS Linux.
+This repository contains setup, purge, and additional scripts along a slightly modified and compiled version of [original DOOM game](https://github.com/id-Software/DOOM). Our modified source code is available in the [source repo](https://github.com/kubikulek231/SOS-DOOM-SOURCE).
 
+The focus of our project is to compile and run the DOOM game on the CentOS Linux operating system (available to download from [here](https://www.centos.org/download/)) with as limited disk space as possible. With the approach specified in our scripts, we achieve around 92 megabytes of the total OS disk space while preserving the core functions of the OS and the playability of the DOOM game.
 
-Part of an assignment in the BPC-SOS course at FEEC BUT.
+Part of an assignment during the BPC-SOS course at FEEC BUT.
 
 ### Scripts description ###
 
