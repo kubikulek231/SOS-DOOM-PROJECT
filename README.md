@@ -8,7 +8,7 @@ This repository contains setup and purge scripts and a slightly modified and com
 
 Part of an assignment in the BPC-SOS course at FEEC BUT.
 
-### Description ###
+### Scripts description ###
 
 ***run-setup.sh***
 > When put into /root/, it downloads this repo and updates itself. It sets up the DOOM game, its dependencies, and other scripts from here. If the -a or --autopurge parameter is specified, it runs the run-purge.sh script when finished.
