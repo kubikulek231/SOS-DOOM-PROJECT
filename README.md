@@ -1,14 +1,13 @@
 # SOS-DOOM-PROJECT
 
-This repository contains setup and purge scripts and a compiled source of the [original DOOM game](https://github.com/id-Software/DOOM), which was slightly modified.
+This repository contains setup and purge scripts and a slightly modified and compiled version of [original DOOM game](https://github.com/id-Software/DOOM). Our modified source code is available [here](https://github.com/kubikulek231/SOS-DOOM-SOURCE).
 
 Part of an assignment in the BPC-SOS course at FEEC BUT.
-
 
 ### Consists of several scripts ###
 
 ***run-setup.sh***
-> When put into /root/, it downloads this repo and updates itself. It sets up the DOOM game and all its dependencies and other scripts from here. If the -a or --autopurge parameter is specified, it runs the run-purge.sh script when finished.
+> When put into /root/, it downloads this repo and updates itself. It sets up the DOOM game, its dependencies, and other scripts from here. If the -a or --autopurge parameter is specified, it runs the run-purge.sh script when finished.
 
 ***run-purge.sh***
 > Purges (removes anything redundant) the whole system and reboots it (in case -n is not specified). It can be run automatically by run-setup.sh or executed separately. Also accepts -s as a parameter, which will run the script in safe mode.
