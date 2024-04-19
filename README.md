@@ -14,7 +14,7 @@ Part of an assignment during the BPC-SOS course at FEEC BUT.
   <img src="doom-game.png" alt="DOOM game screenshot" style="width: 50%;" />
 </p>
 
-> A screenshot taken while running the X window with the game on the shrunk OS. In the bottom part, there is the Xterm terminal emulator, which can be used even while the game is running, for example, for exiting the whole graphic environment.
+> A screenshot taken while running the X window with the game on the shrunk OS. In the bottom part, the Xterm terminal emulator can be used even while the game is running, for example, to exit the whole graphic environment.
 
 ### The Scripts ###
 
@@ -22,13 +22,13 @@ Part of an assignment during the BPC-SOS course at FEEC BUT.
 run-setup.sh
 ```
 
-When placed in /root/, this script downloads the repository and updates itself. It then sets up the DOOM game, its dependencies, and other scripts from this repository. If the -a or—-autopurge parameter is specified, it runs the run-purge.sh script when finished.
+When placed in /root/, this script downloads the repository and updates itself. It then sets up the DOOM game, its dependencies, and other scripts from this repository. If the -a or --autopurge parameter is specified, it runs the run-purge.sh script when finished.
 
 ```bash
 run-purge.sh
 ```
 
-Purges, i.e., removes everything redundant for running the OS and the game, and reboots it (in case -n is not specified). It can be run automatically by run-setup.sh or executed separately. Also accepts -s as a parameter, which will run the script in safe mode.
+Purges, i.e., removes everything redundant for running the OS and the game and reboots it (in case -n or --noreboot is NOT specified). It can be run automatically by run-setup.sh or executed separately. Also accepts -s or --safemode as a parameter, which will run the script in safe mode.
 
 ```bash
 run-doom.sh
