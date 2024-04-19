@@ -8,7 +8,7 @@ This repository contains setup, purge, and additional scripts along a slightly m
 
 The focus of our project is to compile and run the DOOM game on the CentOS Linux operating system (available to download from [here](https://www.centos.org/download/)) with as limited disk space as possible. With the approach specified in our scripts, we achieve around 92 megabytes of the total OS disk space while preserving the OS' core functions and the DOOM game's playability.
 
-Done as part of an assignment during the BPC-SOS course at FEEC BUT.
+Done as a part of an assignment during the BPC-SOS course at FEEC BUT.
 
 <p align="center">
   <img src="doom-game.png" alt="DOOM game screenshot" style="width: 50%;" />
