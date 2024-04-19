@@ -34,7 +34,7 @@ Part of an assignment during the BPC-SOS course at FEEC BUT.
 > Script that modifies the xinit command behavior to run Xterm terminal emulator with custom size on x server start and execute the .run-doom script.
 
 ***get-current-os-size.sh***
-> For debugging purposes: Gets the current size of the whole OS, excluding some directories. It retrieves the size in MiB and sorts the files by size.
+> For debugging purposes: gets the current size of the whole OS, excluding some directories. It retrieves the size in MiB and sorts the files by size.
 
 ***get-yum-packages.sh***
-> For debugging purposes: Lists every yum package installed by size and saves the output to packages.txt.
+> For debugging purposes: lists every yum package installed by size and saves the output to packages.txt.
