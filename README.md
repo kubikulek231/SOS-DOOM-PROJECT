@@ -22,7 +22,7 @@ Part of an assignment during the BPC-SOS course at FEEC BUT.
 run-setup.sh
 ```
 
-When placed in /root/, this script downloads the repository and updates itself. It then sets up the DOOM game, its dependencies, and other scripts from this repository. If the -a or --autopurge parameter is specified, it runs the run-purge.sh script when finished.
+When placed in /root/, the script downloads this repository and runs the newer version of the script (e.g. updates itself). It then sets up the DOOM game, its dependencies, and other scripts from this repository. If the -a or --autopurge parameter is specified, it runs the run-purge.sh script when finished.
 
 ```bash
 run-purge.sh
