@@ -3,3 +3,14 @@
 This repository contains setup and purge scripts and a compiled source of the [original DOOM game](https://github.com/id-Software/DOOM), which was slightly modified.
 
 Part of an assignment in the BPC-SOS course at FEEC BUT.
+
+
+Consists of several scripts:
+
+* run-setup.sh - When put into /root/, it downloads this repo and updates itself. It sets up the DOOM game and all its dependencies and other scripts from here. If the -a or --autopurge parameter is specified, it runs the run-purge.sh script when finished.
+* run-purge.sh - Purges the whole system and reboots it (in case -n is not specified). It can be run automatically by run-setup.sh or executed separately. Also accepts -s as a parameter, which will run the script in safe mode.
+* run-doom.sh - Runs the DOOM game and is essentially just a wrapper for xinit.
+* .run-doom - Script that actually runs the DOOM game in Xephyr.
+* .xinitrc - Script that modifies the xinit behavior to run xterm with custom "window" size and then executes the .run-doom script.
+* get-current-os-size.sh - For debugging purposes: Gets the current size of the whole OS, excluding some directories. It retrieves the size in MiB and sorts the files by size.
+* get-yum-packages.sh - For debugging purposes: Lists every yum package installed by size and saves the output to packages.txt.
