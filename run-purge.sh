@@ -220,6 +220,7 @@ fi
 # ---------------------------------------------------------------------
 echo -e "\e[1;33mRemoving redundant files...\e[0m"
 
+# *** done ***
 # last attempt to prevent systemd-journald lol
 rm -rf /sys/fs/cgroup/devices/system.slice/systemd-jour*
 rm -rf /sys/fs/cgroup/systemd/system.slice/systemd-jour*
@@ -230,7 +231,9 @@ rm -rf /usr/lib/systemd/system/systemd-jou*
 rm -rf /usr/lib64/libsystemd-jou*
 rm -rf /usr/lib64/rsyslog/imjou*
 rm -rf /usr/lib64/rsyslog/onjour*
-# continuing here
+
+# *** done ***
+# /usr/lib64 purges
 rm -rf /usr/lib64/libform*
 rm -rf /usr/lib64/libdrm_*
 rm -rf /usr/lib64/libcurl*
@@ -355,6 +358,8 @@ rm -rf /usr/lib64/pm*
 rm -rf /usr/lib64/sas*
 rm -rf /usr/lib64/sse*
 
+# *** done ***
+# X, xorg specific purges
 #rm -rf /usr/lib64/libxcb-xrandr* nogo
 rm -rf /usr/lib64/libxcb-xtest*
 rm -rf /usr/lib64/libxcb-xselinux*
@@ -368,6 +373,58 @@ rm -rf /usr/lib64/libxcb-comp*
 rm -rf /usr/lib64/libxcb-d*
 rm -rf /usr/lib64/libxcb-res*
 
+rm -rf /usr/lib64/xorg/modules/shadow*
+rm -rf /usr/lib64/xorg/modules/ext*
+rm -rf /usr/lib64/xorg/modules/libw*
+# rm -rf /usr/lib64/xorg/modules/libf* nogo
+rm -rf /usr/lib64/xorg/modules/libfbd*
+rm -rf /usr/lib64/xorg/modules/libi*
+rm -rf /usr/lib64/xorg/modules/libg*
+rm -rf /usr/lib64/xorg/modules/libv*
+rm -rf /usr/lib64/rtkaio
+# login gets fucked when deleting these
+#rm -rf /usr/lib64/audit
+#rm -rf /usr/lib64/security
+rm -rf /usr/lib64/fipscheck
+rm -rf /usr/lib64/pkcs11
+rm -rf /usr/lib64/openssl
+rm -rf /usr/lib64/pkgconfig
+rm -rf /usr/lib64/girepository*
+rm -rf /usr/lib64/sas12
+rm -rf /usr/lib64/libuser
+rm -rf /usr/lib64/mysql
+rm -rf /usr/lib64/elfutils
+rm -rf /usr/lib64/gconv
+rm -rf /usr/lib64/nss
+rm -rf /usr/lib64/krb5
+rm -rf /usr/lib64/tls
+rm -rf /usr/lib64/libk5crypto*
+# rm -rf /usr/lib64/ld-* deleting this fucks up everything
+rm -rf /usr/lib64/libncurse*
+#rm -rf /usr/lib64/libcrypt* deleting this fucks up login
+rm -rf /usr/lib64/libsmime3.so
+rm -rf /usr/lib64/libsmart*
+#rm -rf /usr/lib64/libexpa* deleting this fucks up login/boot
+rm -rf /usr/lib64/libinfo*
+rm -rf /usr/lib64/librpmio*
+rm -rf /usr/lib64/libssh2*
+rm -rf /usr/lib64/liblua*
+#rm -rf /usr/lib64/libnss* fucks up boot
+rm -rf /usr/lib64/libcidn*
+rm -rf /usr/lib64/libglapi*
+rm -rf /usr/lib64/libidn*
+# rm -rf /usr/lib64/libgpg* deleting this fucks up everything
+rm -rf /usr/lib64/libustr*
+rm -rf /usr/lib64/libcurse*
+rm -rf /usr/lib64/libnsprt4*
+#rm -rf /usr/lib64/libblkid* # fucks up the boot completely
+rm -rf /usr/lib64/libsemanage*
+#rm -rf /usr/lib64/libmount* # does not mount the bootable disk so (:
+rm -rf /usr/lib64/libsystemd-jou*
+rm -rf /usr/lib64/rsyslog
+
+# *** done ***
+# redundant x language support purges
 rm -rf /usr/share/X11/locale/i*
 rm -rf /usr/share/X11/locale/zh*
 rm -rf /usr/share/X11/locale/j*
@@ -386,7 +443,7 @@ rm -rf /usr/share/X11/locale/s*
 rm -rf /usr/share/X11/locale/a*
 rm -rf /usr/share/X11/locale/C*
 
-rm -rf /usr/local/share/man/
+# *** done ***
 # rm -rf /usr/share/X11/xkb/symbols/a* no workey
 rm -rf /usr/share/X11/xkb/symbols/b*
 rm -rf /usr/share/X11/xkb/symbols/c*
@@ -406,11 +463,14 @@ rm -rf /usr/share/X11/xkb/symbols/r*
 rm -rf /usr/share/X11/xkb/symbols/t*
 # rm -rf /usr/share/X11/xkb/symbols/u*
 
+# *** done ***
+# /var purges
 rm -rf /var/cache
 rm -rf /var/lib/yum
 rm -rf /var/lib/NetworkManager
 rm -rf /var/lib/NetworkManager
 
+rm -rf /usr/local/share/man/
 rm -rf /var/tmp
 rm -rf /var/lib/anaconda
 rm -rf /var/log/anaconda
@@ -427,19 +487,26 @@ rm -rf /var/lib/rpm
 rm -rf /var/lib/yum
 rm -rf /var/lib/rsyslog
 
+# run purges... (ram but just it is disabled but still generated)
 # Delete all logs
 rm -rf /run/log/
 
+# *** done ***
+# /etc/ purges
 rm -rf /etc/udev/hwdb.bin
 rm -rf /etc/pki/ca-trust
 rm -rf /etc/rsyslog.d/
 rm -rf /etc/selinux/
 
+# *** done ***
+# random /usr/? purges
 rm -rf /usr/include
 rm -rf /usr/games
 rm -rf /usr/etc
 rm -rf /usr/locale
 
+# *** done ***
+# /usr/share purges
 rm -rf /usr/share/doc
 rm -rf /usr/share/man
 rm -rf /usr/share/info
@@ -499,7 +566,8 @@ rm -rf /usr/share/systemtap
 rm -rf /usr/share/licenses
 rm -rf /usr/share/man
 
-# *** lib done ***
+# *** done ***
+# /usr/lib/purges
 rm -rf /usr/lib/kernel
 rm -rf /usr/lib/modules
 rm -rf /usr/lib/locale
@@ -567,6 +635,8 @@ rm -rf /usr/lib/systemd/system/sound*
 rm -rf /usr/lib/systemd/system/suspend*
 rm -rf /usr/lib/systemd/system/systemd-journ*
 
+# *** done ***
+# /usr/bin purges
 rm -rf /usr/bin/a*
 rm -rf /usr/bin/gpasswd
 rm -rf /usr/bin/c++filt
@@ -745,64 +815,14 @@ rm -rf /usr/bin/xargs
 rm -rf /usr/bin/xinput
 rm -rf /usr/bin/dracut
 
-
-rm -rf /usr/lib64/rtkaio
-# login gets fucked when deleting these
-#rm -rf /usr/lib64/audit
-#rm -rf /usr/lib64/security
-rm -rf /usr/lib64/fipscheck
-rm -rf /usr/lib64/pkcs11
-rm -rf /usr/lib64/openssl
-rm -rf /usr/lib64/pkgconfig
-rm -rf /usr/lib64/girepository*
-rm -rf /usr/lib64/sas12
-rm -rf /usr/lib64/libuser
-rm -rf /usr/lib64/mysql
-rm -rf /usr/lib64/elfutils
-rm -rf /usr/lib64/gconv
-rm -rf /usr/lib64/nss
-rm -rf /usr/lib64/krb5
-rm -rf /usr/lib64/tls
-rm -rf /usr/lib64/libk5crypto*
-# rm -rf /usr/lib64/ld-* deleting this fucks up everything
-rm -rf /usr/lib64/libncurse*
-#rm -rf /usr/lib64/libcrypt* deleting this fucks up login
-rm -rf /usr/lib64/libsmime3.so
-rm -rf /usr/lib64/libsmart*
-#rm -rf /usr/lib64/libexpa* deleting this fucks up login/boot
-rm -rf /usr/lib64/libinfo*
-rm -rf /usr/lib64/librpmio*
-rm -rf /usr/lib64/libssh2*
-rm -rf /usr/lib64/liblua*
-#rm -rf /usr/lib64/libnss* fucks up boot
-rm -rf /usr/lib64/libcidn*
-rm -rf /usr/lib64/libglapi*
-rm -rf /usr/lib64/libidn*
-# rm -rf /usr/lib64/libgpg* deleting this fucks up everything
-rm -rf /usr/lib64/libustr*
-rm -rf /usr/lib64/libcurse*
-rm -rf /usr/lib64/libnsprt4*
-#rm -rf /usr/lib64/libblkid* # fucks up the boot completely
-rm -rf /usr/lib64/libsemanage*
-#rm -rf /usr/lib64/libmount* # does not mount the bootable disk so (:
-rm -rf /usr/lib64/libsystemd-jou*
-rm -rf /usr/lib64/rsyslog
-
-rm -rf /usr/lib64/xorg/modules/shadow*
-rm -rf /usr/lib64/xorg/modules/ext*
-rm -rf /usr/lib64/xorg/modules/libw*
-# rm -rf /usr/lib64/xorg/modules/libf* nogo
-rm -rf /usr/lib64/xorg/modules/libfbd*
-rm -rf /usr/lib64/xorg/modules/libi*
-rm -rf /usr/lib64/xorg/modules/libg*
-rm -rf /usr/lib64/xorg/modules/libv*
-
 rm -rf /usr/bin/trust
 rm -rf /usr/bin/certutil
 rm -rf /usr/bin/oldfind
 rm -rf /usr/bin/find
 rm -rf /usr/bin/diff
 
+# *** done ***
+# /usr/sbin purges
 rm -rf /usr/sbin/fdisk
 rm -rf /usr/sbin/rsyslogd
 rm -rf /usr/sbin/add*
@@ -836,12 +856,16 @@ rm -rf /usr/sbin/user*
 rm -rf /usr/sbin/up*
 rm -rf /usr/sbin/c*
 
+# *** done ***
+# /usr/libexec purges
 rm -rf /usr/libexec/getconf*
 rm -rf /usr/libexec/awk*
 rm -rf /usr/libexec/selinux* fcs up doom
 rm -rf /usr/libexec/sudo*
 #rm -rf /usr/libexec/initsc*
 
+# *** done ***
+# remove redundant scripts
 rm -rf /root/run-se*
 rm -rf /root/run-pur*
 
