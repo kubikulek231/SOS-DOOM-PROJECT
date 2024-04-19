@@ -4,7 +4,9 @@
   <img src="doom-logo-ds.png" alt="DOOM game logo" style="width: 50%;" />
 </p>
 
-This repository contains setup and purge scripts and a slightly modified and compiled version of [original DOOM game](https://github.com/id-Software/DOOM). Our modified source code is available [here](https://github.com/kubikulek231/SOS-DOOM-SOURCE).
+This repository contains setup, purge, and additional scripts along a slightly modified and compiled version of [original DOOM game](https://github.com/id-Software/DOOM). Our modified source code is available [here](https://github.com/kubikulek231/SOS-DOOM-SOURCE).
+Using minimal version of CentOS Linux.
+
 
 Part of an assignment in the BPC-SOS course at FEEC BUT.
 
